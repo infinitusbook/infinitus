@@ -1,43 +1,50 @@
 package br.com.infinitusProject.infinitusProject.infra;
 
-import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.text.DateFormat;
-import java.util.Date;
-import br.com.infinitusProject.infinitusProject.models.User;;
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+
 
 public class AccessHistory {
 
-	public void historyLog(String string) throws IOException {
-		int line = 0, column = 0;
+	public void historyLog(String user) throws IOException {
+
+		int line = 999, column = 2;
 		String matriz[][] = new String[line][column];
+		int usuario = 0;
+		Locale locale = new Locale("pt","BR");
+		GregorianCalendar calendar = new GregorianCalendar(); 
+		SimpleDateFormat formatador = new SimpleDateFormat("dd' de 'MMMMM' de 'yyyy' - 'HH':'mm'h'",locale);		
 		
-		User user = new User(); 		
-		java.util.Date dateAccess = new Date();
-		File history = new File("history.txt");
-		
-		String dateAccessStr = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(dateAccess);
+		FileWriter history = new FileWriter("history.txt", true);
+		BufferedWriter writer = new BufferedWriter(history);
 
-		if (!history.exists()) {
-			history.createNewFile();
-		}
+		String dateAccessStr = formatador.format(calendar.getTime());
 
-		line++; 
-		column++; 
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz[0].length; j++) {
-				matriz[i][j] = user.getEmail() + dateAccessStr;
+		for (int j = 0; j < matriz[0].length; j++) {
+			if (usuario != matriz.length - 1) {
+				if (j == 0) {
+					matriz[usuario][j] = "O usuário " + user;
+				} else {
+					matriz[usuario][j] = " se logou no dia " + dateAccessStr;
+				}
 			}
 		}
-		
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz[0].length; j++) {
-				System.out.println(matriz[i][j] + "\t");
-				//aqui viria o File lá salvando a matriz no arquivo 
+		usuario++;
+
+		for (int i = 0; i < matriz.length; i++){
+			if (matriz[i][0] == null) {
+				break;
 			}
+			for (int j = 0; j < matriz[0].length; j++) {
+				writer.write(matriz[i][j]);
+			}
+			writer.write("\r\n");
+		}		
+
+		writer.close();
 		}
-	}
 }
