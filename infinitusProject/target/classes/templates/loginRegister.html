@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Cadastre-se</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/loginRegister.css}">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
+<meta charset="utf-8"/>
+</head>
+<body>
+
+<div class="container">
+  <!--Acione o modal com o botão -->
+  <!--Botão da página institucional -->
+ <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">Entrar</button>
+
+  <!-- Modal -->
+     <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content" >
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button> 
+
+
+<button class="tablink" onclick="openPage('Login', this, 'transparent')">Login</button>
+<button class="tablink" onclick="openPage('Cadastro', this, 'transparent')" id="defaultOpen">Cadastro</button>
+
+</div>
+        
+<div id=minhaDiv class="modal-body">
+
+<!--Login Form-->
+ <div id="Login" class="tabcontent">
+
+<form th:action="@{/login}" method="POST">		
+  <div class="login-box">
+	<h1><center>Login</center></h1>
+	 <div class="textbox">
+	   <i class="fa fa-user" aria-hidden="true"></i>
+		<input type="text" id="email" name="email" th:placeholder="Email">
+	</div>	
+	<div class="textbox">
+		<i class="fa fa-lock" arial-hidden="true"></i>
+		<input type="password"  th:placeholder="Password"
+				id="password" name="password" >
+	</div>	
+	<div align="center" th:if="${param.error}">
+		<p style="font-size: 20; color: #FF1C19;">E-mail ou senha inválidos. Por favor, verifique. </p>
+	</div>	
+    <center><button class="btnlogin" name="Submit" value="Login" type="Submit" th:text="Login"></button>
+      <button class="loginBtn loginBtn--facebook">
+          Login com Facebook
+      </button></center>     
+       </div>   
+  	</form>  
+</div>
+
+<!--Cadastro form-->
+<div id="Cadastro" class="tabcontent">
+<form autocomplete="off" action="#" th:action="@{/registration}" th:object="${user}" method="POST" role="form">
+
+ <div class="cadastro-box">	
+		<label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="validation-message"></label>
+	<div style="margin-top:-25px">	
+	<h1><center>Cadastro</center></h1>	
+	<div class="textbox">	
+	<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+								class="validation-message"></label>							
+		<i class="fa fa-user" aria-hidden="true"></i>
+		<input type="text" th:field="*{name}" placeholder="Name">
+	</div>
+	<div class="textbox">
+	<label	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+								class="validation-message"></label>							
+		<i class="fa fa-user" aria-hidden="true"></i>
+	<input type="text" th:field="*{lastName}"
+								placeholder="Last Name">
+	</div>
+	
+	<div class="textbox">
+		<i class="fa fa-envelope" arial-hidden="true"></i>
+		<input type="text" th:field="*{email}" placeholder="Email"
+								class="form-control" /> 
+	</div>	
+	
+	<div class="textbox">
+		<i class="fa fa-lock" arial-hidden="true"></i>
+		<input type="password" placeholder="Senha" name="" value="">
+	</div>
+		<div class="textbox">
+		<i class="fa fa-lock" arial-hidden="true"></i>
+		<input type="password" th:field="*{password}" placeholder="Password">
+		<label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="validation-message"></label>		
+	</div>
+	</form>
+</div>	
+<center>
+<button class="btnCadastro" type="submit" name="Submit" th:text="Cadastrar" ></button>
+<button class="CadastroBtn loginBtn--facebook"> Cadastre-se com Facebook</button>
+</center>
+<span th:utext="${successMessage}"></span>
+</div> 
+</div>
+</div>
+	 <!-- fim do Conteudo do modal-->
+		 <div class="modal-footer">		
+			 </div>
+		
+		 </div>
+	  </div>
+	</div>
+</div>
+<!--fim do Modal-->
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
