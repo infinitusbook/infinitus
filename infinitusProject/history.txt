@@ -1,6 +1,7 @@
 ﻿O usuário teste1@teste.com se logou às 21 de Março de 2019 - 00:32h
 O usuário teste2@teste.com se logou às 21 de Março de 2019 - 00:32h
 O usuário teste1@teste.com se logou no dia 21 de Março de 2019 - 00:36h
+<<<<<<< HEAD
 O usuário teste1@teste.com se logou no dia 05 de Abril de 2019 - 21:43h
 O usuário teste1@teste.com se logou no dia 05 de Abril de 2019 - 21:47h
 O usuário teste1@teste.com se logou no dia 05 de Abril de 2019 - 21:47h
@@ -133,3 +134,5 @@ O usuário teste1@teste.com se logou no dia 14 de Abril de 2019 - 15:39h
 O usuário teste1@teste.com se logou no dia 14 de Abril de 2019 - 18:10h
 O usuário teste1@teste.com se logou no dia 16 de Abril de 2019 - 18:24h
 O usuário teste10@teste.com se logou no dia 16 de Abril de 2019 - 20:03h
+=======
+>>>>>>> 25586146239f0c79e1059290c83e8f4cd288f9b9
