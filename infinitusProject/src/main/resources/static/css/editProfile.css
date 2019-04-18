@@ -1,0 +1,68 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 125px;
+}
+
+input[type=text],[type=password],select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px  #cc;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+#colunaA{
+	width: 35%;
+	margin-left:11%;
+}
+
+#colunaB{
+	width: 35%;
+	margin-left:9%;
+	margin-top:-2px;
+}
+	
+#buttonsave {
+  background-color: #BA55D3;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: 10%;
+}
+
+#buttonsave:hover {
+  color:purple ;
+
+}
+
+#buttoncancel {
+  background-color: #BA55D3;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  margin-left: 0%;
+  margin-top: 10%;  
+}
+
+#buttoncancel:hover {
+  color:purple ;
+
+}
+
+.validation-message {   
+    border:2px solid #FF1C19;
+}

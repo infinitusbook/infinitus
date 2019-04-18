@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title> Editar Perfil </title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/editProfile.css}">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/webjars/jquery/3.0.0/jquery.min.js/}"></script>
+<script type="text/javascript" th:src="@{//code.jquery.com/jquery-3.0.0.min.js}"></script>
+<script type="text/javascript">
+function mascara(t, mask){	
+	var i = t.value.length;
+		var saida = mask.substring(1, 0);
+		var texto = mask.substring(i)
+		if (texto.substring(0, 1) != saida) {
+			t.value += texto.substring(0, 1);
+		}
+	}
+</script>
+</head>
+<body>
+
+<span th:utext="${successMessage}"></span>     
+
+<form autocomplete="off" action="#" th:action="@{/editProfile}"
+					th:object="${user}" method="post" class="form-horizontal"
+					role="form">
+	<div class="input-container">
+     <div id="colunaA">
+	 
+     	<input type="text" th:value="${session.name}" name="name" id="name"  th:errorclass="validation-message" placeholder="Nome"/>     	     
+     	<input type="text" th:name="lastName" th:id="lastName" th:value="${session.lastName}" th:errorclass="validation-message" placeholder="Sobrenome"/><br>     	     
+     	<input type="text" th:name="email" th:id="email" th:value="${session.email}"  disabled/><br>   
+     	<input type="password" th:name="password" th:id="password" placeholder="Nova senha"/><br>
+     	<button type="submit" id="buttonsave">Salvar</button>     	
+     </div>
+        <!--Parte dois do Formulario de Perfil-->
+     <div id="colunaB">         							
+     	<input type="text" th:name="zipCode" th:id="zipcode" th:value="${session.zipCode}" th:errorclass="validation-message" placeholder="CEP" onkeypress="mascara(this, '#####-###')" maxlength="9" style="width: 28%" />
+     	<input type="text" th:name="state" th:id="state" placeholder="Estado" style="width: 21%; margin-left: 34px" />                  
+     	<input type="text" th:name="city" th:id="city" th:value="${session.city}" th:errorclass="validation-message" placeholder="Cidade" style="width: 34%; margin-left: 35px" /><br>     	  
+     	<input type="text" th:name="neighborhood" th:id="neighborhood" th:value="${session.neighborhood}" th:errorclass="validation-message" placeholder="Bairro"/><br>    
+     	<input type="text" th:name="address" th:id="address" th:value="${session.address}" th:errorclass="validation-message" placeholder="Endereço"/><br>     	
+     	<select th:value="${session.readlike}" th:name= "readlike" th:id="readlike">
+		     	<option value="">Selecione seu genêro favorito</option>
+				<option value="Poesia">Poesia</option>
+				<option value="Romance">Romance</option>
+				<option value="Crônica">Crônica</option>
+				<option value="Conto">Conto</option>
+				<option value="Autobiografia">Autobiografia</option>
+				<option value="Fantasia">Fantasia</option>
+				<option value="Horror">Horror</option>
+				<option value="Ficção Científica">Ficção Científica</option>
+				<option value="Suspense">Suspense</option>
+				<option value="Outros">Outros</option>			
+				</select>
+     	<a href="javascript:document.redirectHomeUser.submit();"><input type="button" value= "Voltar" id="buttoncancel"></a>     
+     </div>	 	          	
+    </div>
+   </form>      
+     <form name="redirectHomeUser" th:action="@{/homeUser}" method="get">			
+		<a href="javascript:document..submit();"></a>				
+	</form>  
+		
+<script>
+jQuery(function($){
+   $("#zipcode").change(function(){
+      var cep_code = $(this).val();
+      if(cep_code.length <= 0 ) return;
+      $.get("http://apps.widenet.com.br/busca-cep/api/cep.json", { code: cep_code },
+         function(result){
+            if( result.status!=1 ){
+               alert(result.message || "Houve um erro desconhecido");
+               return;
+            }
+            $("input#zipcode").val( result.code );
+            $("input#state").val( result.state );
+            $("input#city").val( result.city );
+            $("input#neighborhood").val( result.district );
+            $("input#address").val( result.address );
+            $("input#state").val( result.state );
+         });
+   });
+});
+</script>
+</body>
+</html>

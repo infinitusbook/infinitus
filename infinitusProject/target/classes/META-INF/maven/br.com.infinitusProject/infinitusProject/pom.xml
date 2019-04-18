@@ -64,14 +64,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>3.0.0</version>
         </dependency>
-=======
->>>>>>> 25586146239f0c79e1059290c83e8f4cd288f9b9
 
 	</dependencies>
 
