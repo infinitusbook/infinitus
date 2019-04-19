@@ -101,7 +101,11 @@
 </div>	
 <center>
 <button class="btnCadastro" type="submit" name="Submit" th:text="Cadastrar" ></button>
-<button class="CadastroBtn loginBtn--facebook"> Cadastre-se com Facebook</button>
+<!-- <button class="CadastroBtn loginBtn--facebook"> Cadastre-se com Facebook</button> -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=436751483745741&autoLogAppEvents=1"></script>
+<div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+
 </center>
 <span th:utext="${successMessage}"></span>
 </div> 
