@@ -43,7 +43,7 @@ function mascara(t, mask){
 					placeholder="Sobrenome" required/><br> 
 				<input type="text" th:value="${session.email}" th:name="email" th:id="email"  disabled /><br>
 				<input type="password" th:name="password" th:id="password" placeholder="Nova senha" /><br>
-				<input type="text" th:value="${session.cpf}" th:name="cpf" th:id="cpf" placeholder="CPF" onkeypress="mascara(this, '###-###-###-##')"required/><br>			
+				<input type="text" th:value="${session.cpf}" th:name="cpf" th:id="cpf" placeholder="CPF" maxlength=14 onkeypress="mascara(this, '###-###-###-##')"required/><br>			
 				</div>	
 				<button type="submit" id="buttonsave">Salvar</button>
 			</div>

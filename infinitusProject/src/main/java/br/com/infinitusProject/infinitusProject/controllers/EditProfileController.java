@@ -43,24 +43,12 @@ public class EditProfileController {
 			modelAndView.addObject("user", new User());
 			modelAndView.setViewName("editProfile");
 			
-			setSession(user, session); 
+			LoginController loginController = new LoginController();
+			loginController.setSession(user, session);
 		}		
 		
 				
 		return modelAndView;
 	}
 	
-	public void setSession(User user, HttpSession session) {
-		
-		//Larissa - Setando atributos na session após alterações
-				session.setAttribute("zipcode", user.getZipcode());
-				session.setAttribute("state", user.getState());
-				session.setAttribute("city", user.getCity());
-				session.setAttribute("neighborhood", user.getNeighborhood());
-				session.setAttribute("address", user.getAddress());
-				session.setAttribute("readlike", user.getReadlike()); 		
-				session.setAttribute("cpf", user.getCpf());
-				session.setAttribute("number", user.getNumber());
-				session.setAttribute("complement", user.getComplement());
-	}
 }

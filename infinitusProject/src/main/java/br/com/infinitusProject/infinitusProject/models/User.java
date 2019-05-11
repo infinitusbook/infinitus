@@ -20,17 +20,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    private int id;
-    @Column(name = "email")
+    private Long id;
     @Email(message = "*Por favor, informe um e-mail válido.")
     private String email;
-    @Column(name = "password")
     private String password;
-    @Column(name = "name")
     private String name;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "active")
     private int active;     
     private String zipcode;
     private String state; 
@@ -42,17 +37,17 @@ public class User {
     private String complement; 
     private String number; 
 
-    @OneToMany(mappedBy = "user")	
-	private Set<Book> books; 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<Book> books;  
     
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;                    
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getEmail() {
@@ -145,11 +140,10 @@ public class User {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-	public Set<Book> getBooks() {
+	public List<Book> getBooks() {
 		return books;
 	}
-	public void setBooks(Set<Book> books) {
+	public void setBooks(List<Book> books) {
 		this.books = books;
-	}		
-	
+	}			
 }

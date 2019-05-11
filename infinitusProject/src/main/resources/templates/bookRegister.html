@@ -15,7 +15,7 @@
 
 <div class="container">
   <!--Acione o modal com o botão -->
-  <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">Entrar</button>
+  <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">livro</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -32,22 +32,29 @@
     <div class="form-box">
     <form autocomplete="off" action="#" th:action="@{/bookRegister}" th:object="${book}" method="POST" role="form">
    <center><span style="font-size: 18px; color:#fff;margin-bottom:50px;" th:utext="${successMessage}"></span></center><br><br>						    
-	<h1 style="margin-top: -50px;"><center>Novos Livros</center></h1>
+	<h2 style="margin-top: -50px;"><center>Novos Livros</center></h2>
 	<div class="textbox">
-		<input type="text" th:field="*{title}" placeholder="Titulo do Livro" name="" value="">
+		<input type="text" th:field="*{title}" placeholder="Titulo do Livro" name="" value="" required>
 	</div>
 	
 	<div class="textbox">
-		<input type="text" th:field="*{author}" placeholder="Autor" name="" value="">
+		<input type="text" th:field="*{author}" placeholder="Autor" name="" value="" required>
 	</div>
 
 	<div class="textbox">
-		<input type="text" th:field="*{publisher}" placeholder="Editora" name="" value="">
+		<input type="text" th:field="*{publisher}" placeholder="Editora" name="" value="" required>
 	</div>
-	  <textarea rows="4" cols="39" th:field="*{plusInformation}" placeholder="Informações Complementares" name="" value=""></textarea>
+	  <textarea rows="4" cols="54" th:field="*{plusInformation}" placeholder="Nos conte o que faz esse livro ser tão especial!" name="" value=""></textarea></br></br>
+	
+	<select  class="select" th:name="action" th:id="action" required>
+	<option value="">Você irá doar, emprestar ou trocar este livro?</option>
+		<option value="Doar">Doar</option>
+		<option value="Emprestar">Emprestar</option>
+		<option value="Trocar">Trocar</option>
+	</select>	
 	<div class="button">
-    <button class="btnCancelar" type="button" name="" value="Cancelar";>Cancelar</button> 
     <button class="btnCadastrar" type="submit" name="" value="Cadastrar";>Cadastrar</button> 
+    <button class=btnCancelar type="button" name="" value="Cancelar";>Cancelar</button> 
        </div>
        </form>
        </div>                     

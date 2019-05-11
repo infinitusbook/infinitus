@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.infinitusProject.infinitusProject.models.Book;
-import br.com.infinitusProject.infinitusProject.models.User;
 import br.com.infinitusProject.infinitusProject.services.BookService;
 
 @Controller
@@ -20,6 +19,7 @@ public class BookRegisterController {
 	@Autowired
 	private BookService bookService;
 	
+	//Larissa - Request GET para exibição da página de Cadastrar livros
 	@RequestMapping(value="/bookRegister", method = RequestMethod.GET)
 	public ModelAndView bookRegister(Book book) {
 		ModelAndView modelAndView = new ModelAndView(); 
@@ -28,16 +28,19 @@ public class BookRegisterController {
 		return modelAndView; 
 	}
 	
+	//Larissa - Request POST para cadastro dos livros
 	@RequestMapping(value="/bookRegister", method = RequestMethod.POST)
 	public ModelAndView createNewBook(@Valid Book book, BindingResult bindingResult, HttpSession session) {
 		ModelAndView modelAndView = new ModelAndView(); 
 		if(bindingResult.hasErrors()) {
 			modelAndView.setViewName("bookRegister");
 		} else {
-			bookService.saveBook(book);
+			Long userId = Long.parseLong(session.getAttribute("id").toString());
+			bookService.saveBook(userId, book);
 			modelAndView.addObject("successMessage", "Livro cadastrado com sucesso!");
 			modelAndView.addObject("book", book);
-			modelAndView.setViewName("bookRegister");			
+			modelAndView.setViewName("bookRegister");	
+						
 		}
 		return modelAndView;
 					

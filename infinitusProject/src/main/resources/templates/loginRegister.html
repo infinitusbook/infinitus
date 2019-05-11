@@ -105,12 +105,12 @@
 										</div>
 										<div class="textbox">
 											<i class="fa fa-lock" arial-hidden="true"></i> <input
-												type="password" placeholder="Senha" name="" value="" required>
+												type="password" placeholder="Senha" minlength=6 pattern="[0-9]*" name="" value="" required>
 										</div>
 										<div class="textbox">
 											<i class="fa fa-lock" arial-hidden="true"></i> <input
 												type="password" th:field="*{password}"
-												placeholder="Confirmar senha" required> 
+												placeholder="Confirmar senha" minlength=6 pattern="[0-9]*"required> 
 										</div>
 							</form>
 						</div>

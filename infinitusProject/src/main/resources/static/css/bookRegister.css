@@ -5,9 +5,9 @@
 body{
 	margin: 0;
 	padding: 0;
-	 font-family: 'Titillium Web', sans-serif;
-   font-family: 'Open Sans', sans-serif; 
-	 background-size: cover;
+	font-family: 'Titillium Web', sans-serif;
+   	font-family: 'Open Sans', sans-serif; 
+	background-size: cover;
 }
 
 /* Inicio do Modal*/
@@ -28,7 +28,7 @@ body{
 	font-size: 18px;
 	cursor: pointer;
 	margin-left: 100%;
-  margin-top: 2%;
+  	margin-top: 2%;
 
 }
 
@@ -53,7 +53,7 @@ body{
     box-shadow: 0 3px 9px rgba(0,0,0,.5);
     outline: 0;
     margin-left: 25%;
-    width: 50%;
+    width: 65%;
 }
 /*Fim do Modal*/
 
@@ -66,7 +66,7 @@ body{
 	box-sizing: border-box;
 	background: rgba(0,0,0,.075);
 	padding: 40px;
-	width: 445px;
+	width: 550px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -75,10 +75,10 @@ body{
 
 }
 
-.textbox{
+.textbox {
 	width: 100%;
 	overflow: hidden;
-	font-size: 20px;
+	font-size: 15px;
 	padding: 8px 0;
 	margin: 8px 0;
 	border-bottom: 1px solid #D42ABF;
@@ -90,15 +90,20 @@ body{
 	text-align: center;
 }
 
-.textbox input{
+.textbox input, .select{
 	border: none;
 	outline: none;
 	background: none;
 	color: white;
-	font-size: 18px;
+	font-size: 15px;
 	width: 80%;
 	float: left;
 	margin: 0 10px;
+}
+
+.select {	
+	background-color: #7a61ab;	
+	font-size: 17px;	
 }
 
 ::-webkit-input-placeholder {
@@ -112,7 +117,8 @@ textarea{
   border: 2px solid #D42ABF;
   border-radius: 12px;
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 15px;
+
 }
 
 
@@ -122,11 +128,11 @@ textarea{
 	background: none;
 	border: 2px solid #D42ABF;
 	color: white;
-	padding: 5px;
-	font-size: 18px;
+	padding: 6px;
+	font-size: 15px;
 	cursor: pointer;
-	margin-top: 16%;
-  margin-left: 35px;
+	margin-top: 5%;
+  	margin-left: 35px;
 }
 
 .btnCadastrar:focus {
@@ -147,10 +153,10 @@ textarea{
   background: none;
   border: 2px solid #D42ABF;
   color: white;
-  padding: 5px;
-  font-size: 18px;
+  padding: 6px;
+  font-size: 15px;
   cursor: pointer;
-  margin-top: 16%;
+  margin-top: 5%;
   margin-left: 19px;
 }
 

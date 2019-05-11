@@ -103,14 +103,18 @@ public class LoginController {
 	public void setSession(User user, HttpSession session) {
 
 		//Larissa - Setando dados de usuário na Session
+		session.setAttribute("id", user.getId());
 		session.setAttribute("name", user.getName());
 		session.setAttribute("lastName", user.getLastName());
 		session.setAttribute("email", user.getEmail());
+		session.setAttribute("cpf", user.getCpf());
 		session.setAttribute("zipcode", user.getZipcode());
 		session.setAttribute("state", user.getState());
 		session.setAttribute("city", user.getCity());
 		session.setAttribute("neighborhood", user.getNeighborhood());
 		session.setAttribute("address", user.getAddress());
+		session.setAttribute("complement", user.getComplement());
+		session.setAttribute("number", user.getNumber());
 		session.setAttribute("readlike", user.getReadlike());	
 	}
 }
