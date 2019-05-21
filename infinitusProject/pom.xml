@@ -69,6 +69,20 @@
             <artifactId>jquery</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!-- Dependência do Spock Framework -->
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
+			<version>1.2-groovy-2.4</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- para os testes de API REST -->
+		<dependency>
+			<groupId>org.codehaus.groovy.modules.http-builder</groupId>
+			<artifactId>http-builder</artifactId>
+			<version>0.7.1</version>
+		</dependency>
+		<!-- para os testes de API REST -->
 
 	</dependencies>
 
@@ -77,6 +91,22 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<!-- Plugin origatório para o uso se Groovy nos testes unitários -->
+			<plugin>
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>addTestSources</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
