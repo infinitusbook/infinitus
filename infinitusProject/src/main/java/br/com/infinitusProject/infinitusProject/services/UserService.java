@@ -20,6 +20,8 @@ public class UserService {
     private RoleRepository roleRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    public UserService() {}
+    
     @Autowired
     public UserService(UserRepository userRepository,
                        RoleRepository roleRepository,

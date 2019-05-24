@@ -26,6 +26,7 @@ class InfinitusProjectApplicationTest extends Specification {
 		expect:
 		User.getAnnotation(Table)
 	}
+	
 }
 
 
