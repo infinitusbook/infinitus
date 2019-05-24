@@ -10,12 +10,35 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
   <link rel="stylesheet" type="text/css" th:href="@{/css/bookRegister.css}">  
   <meta charset="utf-8"/>
+<script type="text/javascript">	
+   function sendEmail(email_owner, email_person_interested, id_book){
+    	alert(JSON.stringify({emailOwner:email_owner, emailPersonInterested: email_person_interested, idBook:id_book}));
+		$.ajax({
+			 url: 'http://localhost:8081/email-send/',
+			 headers: {
+			      'Content-Type':'application/json'
+			    },
+			 type: 'post',
+		     contentType: 'application/json',
+			 data: JSON.stringify({emailOwner:email_owner, emailPersonInterested: email_person_interested, idBook:id_book}), 
+			 error:	function () {
+			        alert("Erro ao enviar e-mail.");
+			    },
+			 success: function () {
+			        alert("E-mail enviado com sucesso!");
+			    } 
+			});
+    }
+
+</script>
 </head>
 <body>
 
 <div class="container">
   <!--Acione o modal com o botão -->
   <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">livro</button>
+   <button type="button" class="btn btn-info btn-lg" id="btnEmail" onclick="sendEmail('lari3573@gmail.com', 'teste1@teste.com', 3)">e-mail</button>
+  
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">

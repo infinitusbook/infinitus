@@ -334,3 +334,5 @@ O usuário teste@teste.com se logou no dia 11 de Maio de 2019 - 18:58h
 O usuário teste@teste.com se logou no dia 11 de Maio de 2019 - 19:00h
 O usuário teste@teste.com se logou no dia 11 de Maio de 2019 - 19:01h
 O usuário teste3@teste.com se logou no dia 11 de Maio de 2019 - 19:02h
+O usuário teste1@teste.com se logou no dia 23 de Maio de 2019 - 19:58h
+O usuário teste1@teste.com se logou no dia 23 de Maio de 2019 - 20:54h
