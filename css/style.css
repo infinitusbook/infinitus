@@ -1,9 +1,20 @@
 body {
-  font-family: "Lato", sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    height: 1870px;
 }
 
 .admin {
-  margin-top: 200px;
-  margin-left: 200px;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.admin h1 {
+  font-weight: bold;
+  font-size: 2.0em;
+  margin-bottom: 50px;
+}
+
+.border {
+  width: 100px;ns
 }
 
