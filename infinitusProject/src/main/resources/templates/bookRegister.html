@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro de Livros</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bookRegister.css}">  
+  <meta charset="utf-8"/>
+<script type="text/javascript">	
+   function sendEmail(email_owner, email_person_interested, id_book){
+    	alert(JSON.stringify({emailOwner:email_owner, emailPersonInterested: email_person_interested, idBook:id_book}));
+		$.ajax({
+			 url: 'http://localhost:8081/email-send/',
+			 headers: {
+			      'Content-Type':'application/json'
+			    },
+			 type: 'post',
+		     contentType: 'application/json',
+			 data: JSON.stringify({emailOwner:email_owner, emailPersonInterested: email_person_interested, idBook:id_book}), 
+			 error:	function () {
+			        alert("Erro ao enviar e-mail.");
+			    },
+			 success: function () {
+			        alert("E-mail enviado com sucesso!");
+			    } 
+			});
+    }
+
+</script>
+</head>
+<body>
+
+<div class="container">
+  <!--Acione o modal com o botão -->
+  <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">livro</button>
+   <button type="button" class="btn btn-info btn-lg" id="btnEmail" onclick="sendEmail('lari3573@gmail.com', 'teste1@teste.com', 3)">e-mail</button>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" >
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	
+        </div>
+        
+        <div id=minhaDiv class="modal-body">
+      <!--Conteudo do modal-->
+         
+    <div class="form-box">
+    <form autocomplete="off" action="#" th:action="@{/bookRegister}" th:object="${book}" method="POST" role="form">
+   <center><span style="font-size: 18px; color:#fff;margin-bottom:50px;" th:utext="${successMessage}"></span></center><br><br>						    
+	<h2 style="margin-top: -50px;"><center>Novos Livros</center></h2>
+	<div class="textbox">
+		<input type="text" th:field="*{title}" placeholder="Titulo do Livro" name="" value="" required>
+	</div>
+	
+	<div class="textbox">
+		<input type="text" th:field="*{author}" placeholder="Autor" name="" value="" required>
+	</div>
+
+	<div class="textbox">
+		<input type="text" th:field="*{publisher}" placeholder="Editora" name="" value="" required>
+	</div>
+	  <textarea rows="4" cols="54" th:field="*{plusInformation}" placeholder="Nos conte o que faz esse livro ser tão especial!" name="" value=""></textarea></br></br>
+	
+	<select  class="select" th:name="action" th:id="action" required>
+	<option value="">Você irá doar, emprestar ou trocar este livro?</option>
+		<option value="Doar">Doar</option>
+		<option value="Emprestar">Emprestar</option>
+		<option value="Trocar">Trocar</option>
+	</select>	
+	<div class="button">
+    <button class="btnCadastrar" type="submit" name="" value="Cadastrar";>Cadastrar</button> 
+    <button class=btnCancelar type="button" name="" value="Cancelar";>Cancelar</button> 
+       </div>
+       </form>
+       </div>                     
+          <!-- fim do Conteudo do modal-->
+        </div>
+        <div class="modal-footer">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
