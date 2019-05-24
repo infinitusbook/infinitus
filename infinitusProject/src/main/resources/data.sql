@@ -1,1 +1,0 @@
-UPDATE role SET role_id = 1, role = 'ADMIN' 
