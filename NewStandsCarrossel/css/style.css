@@ -1,3 +1,166 @@
+body {
+  font-family: "Lato", sans-serif;
+background-color: dimgray;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #431842;/*roxo*/
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: lightgray;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color:lightgray;
+  background-color:#581b58;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*imagem do logo do menu*/
+.logoMenu{
+	width: 200px;
+	height: 100px;
+	margin-left:10px;
+}
+
+/*barra de pesquisa*/
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px; 
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:226px;
+  color: white;
+}
+ 
+#btnBusca{
+  float:left;
+  cursor:pointer;
+  width: 15px;
+  height: 17px;
+  background-color: transparent;
+  
+  
+}
+
+#divBusca img{
+  float:left;
+  margin-left: 135px;
+  height:35px;
+  width: 35px;
+
+}
+ 
+#divBusca{
+  border:solid 2px #c9c9c9;
+  border-radius:2px;
+  height:40px;
+  width:400px;
+  margin:10px auto ;
+  margin-right: 10px;
+  float: right ;
+}
+
+.divbarradepesquisa{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background-color:#431842;/*roxo*/
+  margin-top: -17px;
+  margin-left: -16px;
+  
+}
+
+/*Area dos livros*/
+
+  
+  .categoriaCaroussel{
+    font-weight:bold;/*deixar as letras tipo negrito*/
+    font-size:20px;
+    text-transform:uppercase;/*todas letras em maiusculo*/
+    letter-spacing: .1em;/*espaçamento entre as letras*/
+    margin-bottom: 10px;
+    color: gainsboro;
+    
+  } 
+  
+  
+ /*   .categoriaCaroussel:after{
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 15px;
+      border-top: 1px solid #000;
+  }
+
+  .categoria1:after{
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 15px;
+      border-top: 1px solid #000;
+  }
+*/
+
+
+/*botãoZINHO não está usando mas deixei ai caso queira colocar algum botao e pá
+	.btn{
+		border: 3px solid #fec63e;
+		padding:10px 30px;
+		color:#fec63e;
+		font-size:14px;
+		line-height:20px;
+		text-transform:uppercase;
+		letter-spacing: .1em;
+        font-weight: bold;
+		margin-top: 20px;
+		}
+	.btn:hover{
+		border: 3px solid #431842;
+		color:#431842;
+
+		}
+*/
+
+
+/*STYLE CAROUSSEL*/
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -52,14 +215,17 @@ table {
 	width:80%;/*diminui a caixa de livros*/
     margin:0 auto;
     position:relative;
+    margin-top: 200px;/*s slider ficar alto de mais ele fica bugado*/
+    z-index: -99;
 }
+
 .item{
 	border: 3px solid red;
 	width:100%;/*diminui os livros*/
 	height: 300px;
 	position: relative;
 	padding: 5px;
-    
+   
 }
 
 .slick-prev, .slick-next{
@@ -99,10 +265,14 @@ table {
 	border: 3px solid transparent;/*tem borda tranparente par a imagem ficar do mesmo tamanho*/
 	position:relative;
 
-
 }
 
 .slider-image:hover{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	transition-delay: inherit;
+    
 }
+
+
+
+
