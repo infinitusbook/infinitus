@@ -27,7 +27,8 @@ public class BookService {
 	
 	public void saveBook(@PathVariable("id") Long id, Book book) {
 		User user = userRepository.getOne(id); 
-		book.setUser(user);			
+		book.setUser(user);		
+		book.setAvailable("Y");
 		bookRepository.save(book); 
 	}
 	

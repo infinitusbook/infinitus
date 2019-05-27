@@ -79,38 +79,13 @@ function mascara(t, mask){
 					<option value="Outros">Outros</option>
 				</select> 
 				</div>
-				<a href="javascript:document.redirectHomeUser.submit();">
+				<a href="#" th:href="@{/homeBooks}">
 				<input type="button" value="Voltar" id="buttoncancel"></a>
 			</div>
 		</div>
 	</form>
-	<!-- Larissa  - Mini gambi, pois não tem como ficar um form dentro do outro, então aqui esá fazendo a chamada 
-   para o usuário voltar à página Home -->
-	<form name="redirectHomeUser" th:action="@{/homeUser}" method="get">
-		<a href="javascript:document..submit();"></a>
-	</form>
-
+	
 	<!-- Larissa - Código que faz a consulta de CEP para este completar campos na página -->
-	<script>
-jQuery(function($){
-   $("#zipcode").change(function(){
-      var cep_code = $(this).val();
-      if(cep_code.length <= 0 ) return;
-      $.get("http://apps.widenet.com.br/busca-cep/api/cep.json", { code: cep_code },
-         function(result){
-            if( result.status!=1 ){
-               alert(result.message || "Houve um erro desconhecido");
-               return;
-            }
-            $("input#zipcode").val( result.code );
-            $("input#state").val( result.state );
-            $("input#city").val( result.city );
-            $("input#neighborhood").val( result.district );
-            $("input#address").val( result.address );
-            $("input#state").val( result.state );
-         });
-   });
-});
-</script>
+<script type="text/javascript" src="js/api-cep-widenet.js"></script>
 </body>
 </html>

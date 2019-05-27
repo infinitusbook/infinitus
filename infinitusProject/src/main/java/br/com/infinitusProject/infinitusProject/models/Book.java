@@ -27,6 +27,7 @@ public class Book {
 	private String publisher; 
 	private String action;
 	private String plusInformation;
+	private String available;
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
@@ -69,6 +70,13 @@ public class Book {
 	}
 	public void setPlusInformation(String plusInformation) {
 		this.plusInformation = plusInformation;
+	}
+		
+	public String getAvailable() {
+		return available;
+	}
+	public void setAvailable(String available) {
+		this.available = available;
 	}
 	public User getUser() {
 		return user;

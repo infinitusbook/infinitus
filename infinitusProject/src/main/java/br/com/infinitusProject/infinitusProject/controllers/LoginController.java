@@ -72,24 +72,22 @@ public class LoginController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
 		modelAndView.addObject("userName",
-				"Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+				"Olá, " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		modelAndView.addObject("adminMessage", "Conteúdo disponível apenas para admins.");
 		modelAndView.setViewName("admin/home");
 		return modelAndView;
 	}
 
 	//Larissa - Request GET para exibição da página Home
-	@RequestMapping(value = "/homeUser", method = RequestMethod.GET)
-	public ModelAndView homeUser(HttpSession session) throws IOException {
-		
+	@RequestMapping(value = "/homeBooks", method = RequestMethod.GET)
+	public ModelAndView homeBooks(HttpSession session) throws IOException {		
 		AccessHistory accessHistory = new AccessHistory();
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
 		modelAndView.addObject("userName",
-				"Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
-		modelAndView.addObject("userMessage", "Infinitus Books Principal Page!");
-		modelAndView.setViewName("homeUser");	
+				"Olá, " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")!");
+		modelAndView.setViewName("homeBooks");	
 		
 		setSession(user, session); 
 		
@@ -117,4 +115,5 @@ public class LoginController {
 		session.setAttribute("number", user.getNumber());
 		session.setAttribute("readlike", user.getReadlike());	
 	}
+	
 }
