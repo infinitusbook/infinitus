@@ -10,17 +10,17 @@ body {
 .menu {
   width: 100%;
   height: 60px;
-  background-color: blue;
+  background-color: #8A05BE;
 }
-
+ /*
 .border {
   margin-top: -30px;
   width: 100%;
   height: 500px;
   background-color: rgb(209, 68, 92);
-}
-
-#admin {
+} 
+*/
+.admin {
   width: 435px;
   height: 435px;
   background-color: blueviolet;
