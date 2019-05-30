@@ -1,8 +1,12 @@
+/*@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');*/
+
 body {
-  font-family: "Lato", sans-serif;
+font-family: 'Titillium Web', sans-serif;
 background-color: dimgray;
 }
 
+
+/*menu*/
 .sidenav {
   height: 100%;
   width: 0;
@@ -48,6 +52,8 @@ background-color: dimgray;
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
 /*imagem do logo do menu*/
 .logoMenu{
 	width: 200px;
@@ -55,28 +61,23 @@ background-color: dimgray;
 	margin-left:10px;
 }
 
+
+
 /*barra de pesquisa*/
 #txtBusca{
   float:left;
+  float:right;
   background-color:transparent;
   padding-left:5px; 
   font-size:18px;
   border:none;
-  height:32px;
-  width:226px;
+  height:50px;
+  width:370px;
   color: white;
+  margin-top:-40px;
+  margin-right:20px;
 }
  
-#btnBusca{
-  float:left;
-  cursor:pointer;
-  width: 15px;
-  height: 17px;
-  background-color: transparent;
-  
-  
-}
-
 #divBusca img{
   float:left;
   margin-left: 135px;
@@ -91,7 +92,7 @@ background-color: dimgray;
   height:40px;
   width:400px;
   margin:10px auto ;
-  margin-right: 10px;
+  margin-right: 150px;
   float: right ;
 }
 
@@ -105,9 +106,33 @@ background-color: dimgray;
   
 }
 
+.btnBuscar{
+		border: 2px solid #ffff;
+		padding:6px 10px;
+    border-radius:2px;
+		color:#ffff;
+		font-size:14px;
+		line-height:20px;
+		text-transform:uppercase;
+		letter-spacing: .1em;
+    font-weight: bold;
+    /*margin-bottom:400px;*/
+    margin-left:410px;
+    float:left;
+    background-color:transparent;
+		}
+	.btnBuscar:hover{
+		border: 3px solid #ffff;
+		color:purple;
+    background-color:#ffff;
+
+		}
+
+
+
+
 /*Area dos livros*/
 
-  
   .categoriaCaroussel{
     font-weight:bold;/*deixar as letras tipo negrito*/
     font-size:20px;
@@ -118,8 +143,9 @@ background-color: dimgray;
     
   } 
   
-  
- /*   .categoriaCaroussel:after{
+ /*linha de separar conteudo
+ 
+    .categoriaCaroussel:after{
       content: '';
       display: block;
       width: 100%;
@@ -138,25 +164,7 @@ background-color: dimgray;
   }
 */
 
-
-/*botãoZINHO não está usando mas deixei ai caso queira colocar algum botao e pá
-	.btn{
-		border: 3px solid #fec63e;
-		padding:10px 30px;
-		color:#fec63e;
-		font-size:14px;
-		line-height:20px;
-		text-transform:uppercase;
-		letter-spacing: .1em;
-        font-weight: bold;
-		margin-top: 20px;
-		}
-	.btn:hover{
-		border: 3px solid #431842;
-		color:#431842;
-
-		}
-*/
+	
 
 
 /*STYLE CAROUSSEL*/
@@ -165,8 +173,6 @@ background-color: dimgray;
    v2.0 | 20110126
    License: none (public domain)
 */
-
-
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -240,7 +246,6 @@ table {
 	
 }
 
-
 /*.icon-slider2{
 	float: right;
 	margin-top: 11%;
@@ -259,6 +264,7 @@ table {
 	background-color: yellow;
 	border: 3px solid green;
 }*/
+
 .slider-image{
 	width: 80px;/*tamanho da imagem*/
 	height: 300px;

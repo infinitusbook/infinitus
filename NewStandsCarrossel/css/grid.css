@@ -99,13 +99,20 @@
     
 
     #main #divBusca{
-        width: 370px;/* se colocar só o 'divBusca' não irá funcionar*/
+        width: 250px;/* se colocar só o 'divBusca' não irá funcionar*/
     }
     
      #main #divBusca #txtBusca{
         width: 80%;/* se colocar só o 'divBusca' não irá funcionar*/
+        margin-top:-44px;
     }
     
+    #main #divBusca .btnBuscar{
+        padding:6px 6px;
+        font-size:12px;
+        margin-bottom:10px;
+        margin-left:250px;
+    }
 
     
 }
