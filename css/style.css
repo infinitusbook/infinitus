@@ -27,7 +27,7 @@ body {
 }
 
 .btn-default {
- margin-left: 320px;
+ margin-left: 300px;
  margin-top: 13px;
  color: #fff;
  background-color: #8A05BE;
@@ -35,10 +35,12 @@ body {
  }
 
  /* == FIM DO MENU == */
+
 /* margin-left: 25px;
   margin-bottom: -30px;
   border-radius: 5px; 
   margin-top: 20px;*/
+
 /* == ADMINISTRADOR == */
 
 .admin2 {
@@ -57,7 +59,18 @@ body {
 .admin h2 {
   font-weight: bold;
   margin-bottom: 50px;
+  margin-left: 20px;
 }
 
+.admin p {
+  margin-left: 20px;
+}
+
+.text-center {
+  width: 70%;
+  margin: 0 auto;
+
+
+}
 
 
