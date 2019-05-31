@@ -1,0 +1,91 @@
+k<!-- Larissa e Franciele - Tela de Editar perfil com validações do Thymeleaf e consulta de CEP com a API WideNet -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Editar Perfil</title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/css/editProfile.css}">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+	th:src="@{/webjars/jquery/3.0.0/jquery.min.js/}"></script>
+<script type="text/javascript"
+	th:src="@{//code.jquery.com/jquery-3.0.0.min.js}"></script>
+<!-- Larissa - Márcara de CEP full manual porque senão ia dar conflito com a versão do Jquery usada acima -->
+<script type="text/javascript">
+function mascara(t, mask){	
+	var i = t.value.length;
+		var saida = mask.substring(1, 0);
+		var texto = mask.substring(i)
+		if (texto.substring(0, 1) != saida) {
+			t.value += texto.substring(0, 1);
+		}
+	}
+</script>
+</head>
+<body>
+	<div align="center">
+		<span style="font-size: 22px; color: #FFFFFFF;" th:utext="${successMessage}"></span>										
+	</div>
+	<!-- Larissa - Form que traz informações do perfil do usuário, utilizando Session -->
+	<form autocomplete="off" action="#" th:action="@{/editProfile}"
+		 th:object=${user} method="post" class="form-horizontal" role="form">
+		<div class="input-container">
+			<div id="colunaA">
+			<span style="font-size: 30px; color: #FFFFFFF;">Informações Pessoais</span>			
+			<div id="group-1">
+				<input type="text" th:value="${session.name}" name="name" id="name"
+					placeholder="Nome" required/> 
+				<input	type="text" th:value="${session.lastName}" 	th:name="lastName" th:id="lastName"
+					placeholder="Sobrenome" required/><br> 
+				<input type="text" th:value="${session.email}" th:name="email" th:id="email"  disabled /><br>
+				<input type="password" th:name="password" th:id="password" placeholder="Nova senha" /><br>
+				<input type="text" th:value="${session.cpf}" th:name="cpf" th:id="cpf" placeholder="CPF" maxlength=14 onkeypress="mascara(this, '###-###-###-##')"required/><br>			
+				</div>	
+				<button type="submit" id="buttonsave">Salvar</button>
+			</div>
+			<!--Parte dois do Formulario de Perfil-->
+			<div id="colunaB">
+			<span style="font-size: 30px; color: #FFFFFFF;">Informações Adicionais</span>			
+			<div id="group-2">			
+				<input type="text" th:value="${session.zipcode}" th:name="zipcode" th:id="zipcode"					
+					placeholder="CEP" onkeypress="mascara(this, '#####-###')"
+					maxlength="9" style="width: 28%" required /> 
+				<input type="text"
+					th:name="state" th:value="${session.state}" th:id="state" placeholder="Estado"
+					style="width: 21%; margin-left: 30px" required/> 
+				<input type="text" th:value="${session.city}" th:name="city" th:id="city" 
+					placeholder="Cidade" style="width: 30%; margin-left: 35px" required/><br> 
+				<input type="text" th:value="${session.neighborhood}" th:name="neighborhood" th:id="neighborhood" placeholder="Bairro" required/><br>				
+				<input type="text" th:value="${session.address}" th:name="address" th:id="address"
+					placeholder="Endereço" style="width: 58%; margin-left: 0px"  required/> 
+				<input type="text" th:value="${session.number}" th:name="number" th:id="number" placeholder="Número" style="width: 30%; margin-left: 31px;" required/><br>													
+				<input type="text" th:value="${session.complement}" th:name="complement" th:id="complement" placeholder="Complemento" /><br>				
+					<select  th:name="readlike" th:id="readlike" required>
+					<option th:each="r : ${session.readlike}" th:value="${session.readlike}" th:utext="${session.readlike}">Selecione seu genêro favorito</option>
+					<option value="">Selecione seu genêro favorito</option>
+					<option value="Poesia">Poesia</option>
+					<option value="Romance">Romance</option>
+					<option value="Crônica">Crônica</option>
+					<option value="Conto">Conto</option>
+					<option value="Autobiografia">Autobiografia</option>
+					<option value="Fantasia">Fantasia</option>
+					<option value="Horror">Horror</option>
+					<option value="Ficção Científica">Ficção Científica</option>
+					<option value="Suspense">Suspense</option>
+					<option value="Outros">Outros</option>
+				</select> 
+				</div>
+				<a href="#" th:href="@{/homeBooks}">
+				<input type="button" value="Voltar" id="buttoncancel"></a>
+			</div>
+		</div>
+	</form>
+	
+	<!-- Larissa - Código que faz a consulta de CEP para este completar campos na página -->
+<script type="text/javascript" src="js/api-cep-widenet.js"></script>
+</body>
+</html>
