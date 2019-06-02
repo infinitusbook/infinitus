@@ -1,0 +1,291 @@
+body {
+ font-family: 'Titillium Web', sans-serif;
+ font-family: 'Open Sans', sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #431842;
+  overflow-x: hidden;
+  overflow: none;
+  transition: 0.5s;
+  padding-top: 60px;
+  overflow: hidden;/*ocultar a barra do menu*/
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*barra de pesquisa*/
+
+.divbarradepesquisa{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background-color:#431842;/*roxo*/
+  margin-top: -17px;
+  margin-left: -16px;  
+}
+.search-container {
+  float: right;
+  width: 60%;
+}
+
+.search-container button {
+  padding: 6px 10px;
+  border-radius: 7px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background:#431842;
+}
+.fa{
+  color:black;
+ } 
+.fa:hover{
+  color:white;
+}
+
+input {
+    width: 45%;
+    border-radius: 6px;
+    height: 36px;
+    }
+
+#btnConf{
+  background: none;
+  border: none;
+}    
+
+
+@media screen and (max-width: 600px) {
+  .sidenav .search-container {
+    float: none;
+  }
+  .sidenav a, .sidenav input[type=text], .sidenav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .sidenav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+/*Avatar css*/
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: -50%;
+  margin-left: 79px;
+}
+/*Logo css*/
+.logo{
+  vertical-align: middle;
+  width: 150px;
+  margin-top      : -280px;
+  margin-left: 20px;
+}
+/*CSS Configurações*/
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #8A05BE;
+  width: 46%;
+  height: 95%;
+  border-radius: 7px;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -35px;
+  margin-right: -18px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+#myBtn{
+background: none;
+border: none;
+color:black;
+}
+#myBtn .fa{
+  color:white;
+  font-size:25px; 
+  
+}
+.modal-body h3{
+  color:#8A05BE;
+  margin-left: 16px;
+  font-size: 17px;
+  margin-top: 2%; 
+}
+.modal-body h2{
+  color:#8A05BE;
+  margin-left: 16px;
+  font-size: 17px;
+  margin-top: 6%; 
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #8A05BE;
+    height: 22px;
+}
+.modal-header h1{
+    position: relative;
+    font-size: 20px;
+    margin-left: 0%;
+    color:#8A05BE;
+    margin-top: -16px;
+}
+
+/*Botão das Cores*/
+
+#CorA{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid #8A05BE;
+    background: transparent;
+    margin-left:19%;
+    margin-top: 7%;
+    color: #000000;
+  }
+  #CorA:hover{
+    background: #8A05BE;
+    color: #fff;
+  }
+
+
+#CorB{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid #100016;
+    background: transparent;
+    margin-left:8%;
+    color: #000000;
+  }
+  #CorB:hover{
+    background: #100016;
+    color: #fff;
+  }
+
+
+#CorC{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid blue;
+    background: transparent;
+    margin-left:19%;
+    margin-top: 5%;
+    color:#000;
+  }
+  #CorC:hover{
+    background: blue;
+    color: #fff;
+  }
+
+#CorD{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid yellow;
+    background: transparent;
+    margin-left:8%;
+    columns: #000000;
+	color: #000;
+  }  
+  #CorD:hover{
+    background: yellow;
+    color: #fff;
+  }
+/*Botão dos Avatares*/
+
+.avatar2 {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+}
+.avatar2:hover{
+  box-shadow: 1px 1px 2px black, 0 0 25px purple, 0 0 5px darkblue;
+}
+
+#img1, #img2, #img3, #img4 {
+  border:none;
+  background:none;
+  margin-left: 20%;
+  margin-top: 2%;
+}
+
+
