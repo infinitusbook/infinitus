@@ -37,51 +37,37 @@
       <div class="cabecalho">
             <a href="#"><h1 class="logo"> Mainline - Monitoramento de Hardware. </h1></a>
             <!-- criando o botão de menu com icon do site (get started) - "i class="fa fa-bars fa-lg" (fa-lg vai fazer o icon ficar levemente maior) -->
-            <button type="button" class="btn btn-default">Sair</button>
+            <button type="button" class="btn btn-sair">Sair</button>
       </div>
 
-      <div class="card text-center">
+      
+           <h1>ADMINISTRADOR</h1>
+ 
+      
+      <div class="card text-center1">
          <div class="card-header">
-           <ul class="nav nav-pills card-header-pills">
-             <li class="nav-item">
-               <a class="nav-link active" href="#">Ativo</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="#">Link</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link disabled" href="#">Desativado</a>
-             </li>
-           </ul>
+           <h1>Importar arquivo (.csv)</h1>
          </div>
-         <div class="card-body">
-           <h5 class="card-title">Título especial</h5>
-           <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-           <a href="#" class="btn btn-primary">Visitar</a>
-         </div>
+         <form>
+          <div class="form-group1">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <button type="button" class="btn btn-importar">Importar</button>
+          </div>
+        </form>
        </div>
 
-
-<!--    
-<div class="admin">
-   <div class="admin2">
-         <h1>ADMINISTRADOR</h1>
-            <p>Importação de arquivo (.csv)</p>
-         
-   </div>
-</div>
--->
-<!--
-   <div class="admin">
-      <h1>ADMINISTRADOR</h1>
-         <h2>Upload de arquivo txt</h2><br>
-      <form name="upload" method="post" enctype="multipart/form-data" onsubmit="return teste()">
-         <input type="file" name="arquivo" size="60" onchange="verificaExtensao(this)" required>
-         <br> 
-         <input type="submit" name="enviar" value="Upload!">
-      </form>
-   </div>
--->
+       <div class="card text-center2">
+          <div class="card-header">
+            <h1>Exportar arquivo (.csv)</h1>
+          </div>
+          <div class="form-group2">
+            <h3>De:</h3>
+            <input type="date" class="de"/>
+            <h3>Até:</h3>
+            <input type="date" class="para"/><br>
+            <button type="button" class="btn btn-importar">Exportar</button>
+          </div>
+        </div>
 
 </body>
 </html>

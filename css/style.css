@@ -1,10 +1,12 @@
 /* == css reset == */
 * { 
-  margin: 0; padding: 0; 
+  margin: 0; 
+  padding: 0;
 }
 
 body {
     font-family: 'Titillium Web', sans-serif;
+    height: 900px;
 }
 
 /* == MENU == */
@@ -13,7 +15,7 @@ body {
   height: 65px; 
   float: left; 
   background-color: #8A05BE;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .logo {
@@ -26,8 +28,9 @@ body {
    font-size: 0px; 
 }
 
-.btn-default {
- margin-left: 300px;
+.btn-sair{
+  float: right;
+  margin-right: 20px;
  margin-top: 13px;
  color: #fff;
  background-color: #8A05BE;
@@ -36,41 +39,98 @@ body {
 
  /* == FIM DO MENU == */
 
-/* margin-left: 25px;
-  margin-bottom: -30px;
-  border-radius: 5px; 
-  margin-top: 20px;*/
-
 /* == ADMINISTRADOR == */
 
-.admin2 {
-  width: 100%;
-  height: 568px;
-  background-color: rgb(43, 226, 186);
-  
-}
-
-.admin h1 {
+h1 {
+  font-size: 2em;
   text-align: center;
-  font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+} 
+
+/* == FIM DO ADMINISTRADOR == */
+
+/* == IMPORTAÇÃO == */
+.card-header {
+  background-color: #8A05BE;
+  color: #fff;
+  height: 50px;
 }
 
-.admin h2 {
-  font-weight: bold;
-  margin-bottom: 50px;
-  margin-left: 20px;
+.card-header h1 {
+  text-align: left;
+  font-size: 1.2em;
 }
 
-.admin p {
-  margin-left: 20px;
-}
-
-.text-center {
-  width: 70%;
+.text-center1 {
+  width: 80%;
   margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+.form-group1 {
+  height: 140px;
+}
+
+.form-control-file {
+  margin-top: 30px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-importar {
+  margin-left: 5px;
+  background-color: #8A05BE;
+  color: #fff;
+}
+
+/* == FIM DA IMPORTAÇÃO == */
+
+/* == EXPORTAÇÃO == */
+
+.text-center2 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-group2 {
+  height: 290px;
+}
+
+.form-group2 h3 {
+  margin-top: 30px;
+  font-size: 1.5em;
+  margin-left: 5px;
+}
+
+.de {
+  margin-left: 5px;
+}
+
+.para {
+  margin-left: 5px;
+}
+
+.btn-importar {
+  margin-top: 30px;
+}
+
+/* == FIM DA EXPORTAÇÃO == */
+
+/* == RESPONSIVIDADE == */
+
+@media screen and (min-width: 768px) {
+
+/* == MENU == */
+.btn-sair{
+  float: right;
+  margin-right: 20px;
+  margin-top: 13px;
+  color: #fff;
+  background-color: #8A05BE;
+  border-color: #fff;
+  }
+
+
 
 
 }
-
-
