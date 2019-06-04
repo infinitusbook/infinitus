@@ -172,3 +172,17 @@
     appType: 'webApp'
     WebAppName: 'Infinitus2018'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+
+
+
+- trigger:
+- feature/teste_spock
+
+- pool:
+  vmImage: 'ubuntu-latest'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
