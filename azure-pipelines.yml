@@ -12,7 +12,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
+- trigger:
 - master
 - task: AzureRmWebAppDeployment@4
   inputs:
