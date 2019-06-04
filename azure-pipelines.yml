@@ -1,26 +1,11 @@
 # Starter pipeline
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    sonarQubeRunAnalysis: false
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-- trigger:
+trigger:
 - master
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Microsoft Imagine(81b1fb9b-cdf9-4559-9d91-7e0b23b35bd0)'
-    appType: 'webApp'
-    WebAppName: 'Infinitus2018'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
 pool:
   vmImage: 'ubuntu-latest'
 
