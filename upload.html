@@ -12,25 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta charset="utf-8"/>
     
-      
-<script language="JavaScript">
-   function teste() {
-      if (document.upload.arquivo.value=="") {
-         alert("Arquivo para upload não informado!")
-         document.upload.arquivo.focus()
-         return false      
-      }
-   }
-    function verificaExtensao($input) {
-  var extPermitidas = ['txt', 'png'];
-  var extArquivo = $input.value.split('.').pop();
-
-  if(typeof extPermitidas.find(function(ext){ return extArquivo == ext; }) == 'undefined') {
-    alert('Extensão "' + extArquivo + '" não permitida!');
-      window.location.href = "https://www.google.com.br/"; //colocar a propria url do site para carregar novamente 
-  }
-}
-</script>
+    
 </head>
 <body>
 
