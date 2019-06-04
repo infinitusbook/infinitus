@@ -2,12 +2,15 @@ package br.com.infinitusProject.infinitusProject.controllers;
 
 
 import java.io.IOException;
+import java.util.Collection;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -60,7 +63,6 @@ public class LoginController {
 			modelAndView.addObject("successMessage", "Usuário cadastrado com sucesso!");
 			modelAndView.addObject("user", new User());
 			modelAndView.setViewName("loginRegister");
-
 		}		
 		return modelAndView;
 	}
@@ -69,21 +71,25 @@ public class LoginController {
 	@RequestMapping(value = "/admin/home", method = RequestMethod.GET)
 	public ModelAndView home() {
 		ModelAndView modelAndView = new ModelAndView();
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		User user = userService.findUserByEmail(auth.getName());
-		modelAndView.addObject("userName",
-				"Olá, " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
-		modelAndView.addObject("adminMessage", "Conteúdo disponível apenas para admins.");
 		modelAndView.setViewName("admin/home");
 		return modelAndView;
 	}
 
 	//Larissa - Request GET para exibição da página Home
-	@RequestMapping(value = "/homeBooks", method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView homeBooks(HttpSession session) throws IOException {		
 		AccessHistory accessHistory = new AccessHistory();
-		ModelAndView modelAndView = new ModelAndView();
+		ModelAndView modelAndView = new ModelAndView();		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+		Collection<? extends GrantedAuthority> authorities;
+        authorities = auth.getAuthorities();
+        String myRole = authorities.toArray()[0].toString();
+        String admin = "ADMIN";
+		if(myRole.equals(admin)) {
+			return home(); 
+		}
+		
 		User user = userService.findUserByEmail(auth.getName());
 		modelAndView.addObject("userName",
 				"Olá, " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")!");
@@ -96,7 +102,7 @@ public class LoginController {
 		
 		return modelAndView;
 
-	}
+	} 
 
 	public void setSession(User user, HttpSession session) {
 
@@ -115,5 +121,6 @@ public class LoginController {
 		session.setAttribute("number", user.getNumber());
 		session.setAttribute("readlike", user.getReadlike());	
 	}
+	
 	
 }

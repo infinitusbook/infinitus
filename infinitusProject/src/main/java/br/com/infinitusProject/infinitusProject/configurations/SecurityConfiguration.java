@@ -33,12 +33,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
+        auth
+        	.inMemoryAuthentication()
+        	.withUser("admin")
+        		.password("admin")
+        		.roles("ADMIN")
+        		.and()
+        	.withUser("user")
+        		.password("user")
+        		.roles("USER");
+        	
         auth.
-                jdbcAuthentication()
+        	jdbcAuthentication()
                 .usersByUsernameQuery(usersQuery)
                 .authoritiesByUsernameQuery(rolesQuery)
                 .dataSource(dataSource)
                 .passwordEncoder(bCryptPasswordEncoder);
+        		
     }
 
     //Larissa - Realizando validação das requisições de acordo com página, tipo de usuário 
@@ -49,16 +60,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/editProfile").authenticated()
-                .antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
-                .authenticated().and().csrf().disable().formLogin()
+                .antMatchers("/admin/home").hasRole("ADMIN")
+                //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
+                .and()
+                .formLogin()  
+                .defaultSuccessUrl("/home")
                 .loginPage("/login").failureUrl("/login?error=true")
-                .defaultSuccessUrl("/homeBooks")
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/").and().exceptionHandling()
-                .accessDeniedPage("/access-denied");
+                .logoutSuccessUrl("/").and().exceptionHandling()  
+                .accessDeniedPage("/");
     }
 
     @Override
