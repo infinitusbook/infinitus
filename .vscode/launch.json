@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InfinitusProjectApplication",
+            "request": "launch",
+            "mainClass": "br.com.infinitusProject.infinitusProject.InfinitusProjectApplication",
+            "projectName": "infinitusProject"
+        }
+    ]
+}

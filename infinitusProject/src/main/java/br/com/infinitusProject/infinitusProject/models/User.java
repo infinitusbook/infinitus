@@ -5,7 +5,6 @@ import java.util.Set;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -13,7 +12,6 @@ import javax.validation.constraints.Email;
 @Data
 @Builder
 @Entity
-@NoArgsConstructor
 @Table(name = "[user]")
 public class User {
 	//Larissa - Model de informações sobre os usuários 
