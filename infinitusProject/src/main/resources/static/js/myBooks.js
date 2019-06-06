@@ -10,10 +10,8 @@ $(document).ready(function(){
 		data: null, 
 		success: function(data){
 			booksUser(data)
-			alert('1')
 		}, 
 		error: function() {
-			alert('1_')
 			alert('Algo não está certo...')
 		}
 	});
@@ -27,12 +25,10 @@ function booksUser(current_id) {
 		 type: 'get',
 	     contentType: 'application/json',
 	     success: function(data){
-	    	 alert('2')	
 	    	 bookBox(data)
 			}, 
 			error: function() {
-				alert('2_')
-				alert('Algo não está certo...' + current_id)
+				alert('Algo não está certo...')
 			}
 		});
 	}
