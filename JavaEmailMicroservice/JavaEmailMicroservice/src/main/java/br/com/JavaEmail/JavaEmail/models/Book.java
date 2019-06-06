@@ -25,8 +25,9 @@ public class Book {
 	private String title;  
 	private String author; 
 	private String publisher; 
-	private String action;
+	private String action;	
 	private String plusInformation;
+	private String available;
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
@@ -76,5 +77,13 @@ public class Book {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public String getAvailable() {
+		return available;
+	}
+	public void setAvailable(String available) {
+		this.available = available;
+	}
 				
+	
+	
 }

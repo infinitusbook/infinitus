@@ -395,3 +395,16 @@ O usuário teste@teste.com se logou no dia 04 de Junho de 2019 - 18:19h
 O usuário teste@teste.com se logou no dia 04 de Junho de 2019 - 18:28h
 O usuário teste@teste.com se logou no dia 04 de Junho de 2019 - 18:33h
 O usuário teste@teste.com se logou no dia 04 de Junho de 2019 - 19:16h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 16:55h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:05h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:08h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:09h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:15h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:19h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:20h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:23h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:24h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:26h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 20:27h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 21:03h
+O usuário teste@teste.com se logou no dia 05 de Junho de 2019 - 21:07h

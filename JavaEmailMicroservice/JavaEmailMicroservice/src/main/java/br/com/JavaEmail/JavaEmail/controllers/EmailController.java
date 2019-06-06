@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,12 +22,23 @@ public class EmailController {
 
     @Autowired private JavaMailSender mailSender;
     @Autowired private UserRepository userRepository; 
-    @Autowired private BookRepository bookRepository;
-    
+    @Autowired private BookRepository bookRepository; 
+                    
     @CrossOrigin
     @RequestMapping(path = "/email-send/", method = RequestMethod.POST)
     public String sendMail(@RequestBody UserBookRequest userBookRequest) {
     	
+    	Book bookId = null;
+    	bookId = bookRepository.getOne(userBookRequest.getIdBook());
+    	
+    	String statusBook = bookRepository.getStatus(bookId.getId());
+    	System.err.println(bookId.getId());
+    	System.err.println(statusBook);
+
+    	if (statusBook.equalsIgnoreCase("N")){
+    		System.out.println("passei por aq");
+    		return waitingQueue();
+    	} else {    	    	        	 
     	User user = null; 
     	Book book = null; 
     	user = userRepository.findByEmail(userBookRequest.getEmailPersonInterested());
@@ -38,7 +48,7 @@ public class EmailController {
             MimeMessage mail = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mail);
             helper.setTo(userBookRequest.getEmailOwner());
-            helper.setSubject( "Teste Envio de e-mail" );
+            helper.setSubject("Stands - Alguém está interessado no seu livro!" );
             helper.setText(user.getName() + " está interessado no seu livro: " + book.getTitle() 
             + ". Mande um email para " + user.getEmail(), true);
             mailSender.send(mail);
@@ -46,6 +56,13 @@ public class EmailController {
         } catch (Exception e) {
             e.printStackTrace();
             return "Erro ao enviar e-mail.";
-        }
+        	}
+    	}    	
     }
+    
+    public String waitingQueue() {
+    	System.out.println("entrou aq");
+    	return "aaa";    	    	
+    }
+    
 }

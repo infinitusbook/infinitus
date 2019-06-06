@@ -10,8 +10,8 @@ function sendEmail(email_owner, email_person_interested, id_book){
 			 error:	function () {
 			        alert("Erro ao enviar e-mail. Por gentileza verifique as configurações do antivírus.");
 			    },
-			 success: function () {
-			        alert("E-mail enviado com sucesso!");
+			 success: function (response) {
+			       alert(response);
 			    } 
 			});
     }
