@@ -11,7 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 
 @Data
-@Builder
+
 @Entity
 @NoArgsConstructor
 @Table(name = "[user]")

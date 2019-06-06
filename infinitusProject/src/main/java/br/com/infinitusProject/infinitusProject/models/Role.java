@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 import lombok.Data; 
 
-@Data
 @Entity
 @Table(name = "role")
 public class Role {
