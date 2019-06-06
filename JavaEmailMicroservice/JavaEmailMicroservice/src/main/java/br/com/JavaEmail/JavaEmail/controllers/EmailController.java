@@ -1,8 +1,10 @@
 package br.com.JavaEmail.JavaEmail.controllers;
 
 import javax.mail.internet.MimeMessage;
+import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,20 +28,21 @@ public class EmailController {
     @Autowired private UserRepository userRepository; 
     @Autowired private BookRepository bookRepository; 
     @Autowired private UserBookQueueRepository userBookQueueRepository; 
-                    
+    @Autowired private     	EntityManager entityManager; 
+                       
     @CrossOrigin
     @RequestMapping(path = "/email-send/", method = RequestMethod.POST)
     public String sendMail(@RequestBody UserBookRequest userBookRequest) {
     	
     	Book bookId = null;
-    	bookId = bookRepository.getOne(userBookRequest.getIdBook());
+    	bookId = bookRepository.getOne(userBookRequest.getIdBook());    	
+    	
     	
     	String statusBook = bookRepository.getStatus(bookId.getId());
     	System.err.println(bookId.getId());
-    	System.err.println(statusBook);
+    	System.err.println(statusBook); 
 
     	if (statusBook.equalsIgnoreCase("N")){
-    		System.out.println("passei por aq");
     		return waitingQueue(bookId, userBookRequest.getEmailPersonInterested());
     	} else {    	    	        	 
     	User user = null; 
@@ -60,26 +63,35 @@ public class EmailController {
             e.printStackTrace();
             return "Erro ao enviar e-mail.";
         	}
-    	}    	
+    	}    	    
     }
     
+
     public String waitingQueue(Book book, String userEmail) {
-    	System.out.println("entrou aq");
     	
-    	UserBookQueue bookQueue = userBookQueueRepository.getOne(book.getId());
+    	UserBookQueue bookQueue = new UserBookQueue();
+    	    	    	
+    	UserBookQueue lastPosition = userBookQueueRepository.findTopByOrderByIdDesc();
+    	int position = 0;
+    	if (lastPosition != null) {    	
+    		position = lastPosition.getPosition();
+    	}
+    	
+    	System.err.println(position);
+    	 
     	System.err.println("queue " + book);
-    	int position = 0; 
     	System.err.println("queue " + book.getTitle());
     	bookQueue.setTitle(book.getTitle());
     	bookQueue.setAuthor(book.getAuthor());
-    	bookQueue.setPublisher(book.getPublisher());
+    	bookQueue.setPublisher(book.getPublisher()); 
     	bookQueue.setPlusInformation(book.getPlusInformation());
     	bookQueue.setAvailable(book.getAvailable());
-    	bookQueue.setEmailPersonInterested(userEmail);
-    	bookQueue.setPosition(position++);
+    	bookQueue.setAction(book.getAction()); 
+    	bookQueue.setEmailPersonInterested(userEmail);	
+    	bookQueue.setPosition(position = position + 1);  
     	
-    	userBookQueueRepository.save(bookQueue); 
-    	return "Você está inclusx na fila de espera de  " + book.getTitle();    	    	
+    	userBookQueueRepository.save(bookQueue);  
+    	return "Você está inclusx na fila de espera de  " + book.getTitle() + "!";    	    	
     }
     
 }

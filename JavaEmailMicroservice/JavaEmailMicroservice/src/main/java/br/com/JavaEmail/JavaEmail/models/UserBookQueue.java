@@ -31,10 +31,8 @@ public class UserBookQueue {
 					
 		public UserBookQueue() {}
 		
-		public UserBookQueue(Long id, String title, String author, String publisher, String action,
+		public UserBookQueue(String title, String author, String publisher, String action,
 				String plusInformation, String available, int position, String emailPersonInterested) {
-			super();
-			this.id = id;
 			this.title = title;
 			this.author = author;
 			this.publisher = publisher;
