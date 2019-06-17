@@ -136,9 +136,9 @@
    </appSettings>
 
    <!-- Web App information -->
-   <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
-   <appName>${WEBAPP_NAME}</appName>
-   <region>${REGION}</region>  
+   <resourceGroup>Infinitus</resourceGroup>
+   <appName>stands</appName>
+   <region>brazilsouth</region>  
 
    <!-- Java Runtime Stack for Web App on Linux-->
    <linuxRuntime>jre8</linuxRuntime>
