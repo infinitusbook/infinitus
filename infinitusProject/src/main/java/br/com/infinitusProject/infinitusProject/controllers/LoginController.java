@@ -92,7 +92,7 @@ public class LoginController {
 		
 		User user = userService.findUserByEmail(auth.getName());
 		modelAndView.addObject("userName",
-				"Olá, " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")!");
+				"Olá, " + user.getName() + " " + user.getLastName() +"!");
 		modelAndView.setViewName("homeBooks");	
 		
 		setSession(user, session); 

@@ -1,0 +1,344 @@
+body {
+ font-family: 'Titillium Web', sans-serif;
+ font-family: 'Open Sans', sans-serif;
+ color: black;
+}
+
+
+.book-info {
+	color: white;
+}
+
+  .livros_lista li{
+    background-color:black;
+    text-align:center;
+  }
+
+.livros{
+    padding:60px 0;
+    
+  }
+  
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background:linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+  overflow-x: hidden;
+  overflow: none;
+  transition: 0.5s;
+  padding-top: 60px;
+  overflow: hidden;/*ocultar a barra do menu*/
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color:#f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover { 
+  color: #818181 ;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*barra de pesquisa*/
+
+.divbarradepesquisa{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background:linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+  margin-top: -17px;
+  margin-left: -16px;  
+}
+.search-container {
+  margin-top: 0px;
+  float: right;
+  width: 60%;
+
+}
+
+.search-container button {
+  padding: 6px 10px;
+  border-radius: 7px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.fa{
+  color:black;
+ } 
+
+input {
+    width: 45%;
+    border-radius: 6px;
+    height: 36px;
+    }
+
+.hamburguer{
+font-size:35px;
+cursor:pointer;
+margin-left: 30px;
+color:white;
+position: absolute;
+top: 10px;
+}    
+
+#btnConf{
+  background: none;
+  border: none;
+}    
+
+
+@media screen and (max-width: 600px) {
+  .sidenav .search-container {
+    float: none;
+  }
+  .sidenav a, .sidenav input[type=text], .sidenav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 10%;
+    margin: 0;
+    padding: 14px;
+  }
+  .sidenav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+/*Avatar css*/
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 0%;
+  margin-left: 79px;
+}
+/*Logo css*/
+.logo{
+  vertical-align: middle;
+  width: 150px;
+  margin-top: -280px;
+  margin-left: 20px;
+}
+#UserName{
+
+  margin-left: 62px;
+  color: white;
+}
+/*CSS Configurações*/
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #8A05BE;
+  width: 33%;
+  height: 90%;
+  border-radius: 7px;
+
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -22px;
+  margin-right: -18px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myBtn{
+margin-left: 23%;  
+background: none;
+border: none;
+}
+#myBtn .fa{
+  color:white;
+  font-size:25px; 
+  
+}
+#buttonExit{
+  border: none;
+  background: none;
+  margin-left: 2%;
+
+}
+.modal-body h3{
+  color:#8A05BE;
+  margin-left: 16px;
+  font-size: 17px;
+  margin-top: 2%; 
+}
+.modal-body h2{
+  color:#8A05BE;
+  margin-left: 16px;
+  font-size: 17px;
+  margin-top: 6%; 
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #8A05BE;
+    height: 22px;
+}
+.modal-header h1{
+    position: relative;
+    font-size: 20px;
+    margin-left: 26%;
+    color:#8A05BE;
+    margin-top: -16px;
+}
+
+/*Botão das Cores*/
+
+#CorA{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid #8A05BE;
+    background: transparent;
+    margin-left:19%;
+    margin-top: 7%;
+    color: #000000;
+  }
+  #CorA:hover{
+    background: #8A05BE;
+    color: #fff;
+  }
+
+
+#CorB{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid #100016;
+    background: transparent;
+    margin-left:8%;
+    color: #000000;
+  }
+  #CorB:hover{
+    background: #100016;
+    color: #fff;
+  }
+
+
+#CorC{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid #66028c;
+    background: transparent;
+    margin-left:19%;
+    margin-top: 5%;
+    color:#000;
+  }
+  #CorC:hover{
+    background: #66028c;
+    color: #fff;
+  }
+
+#CorD{
+    width: 27%;
+    height: 37px;
+    border-radius: 8px;
+    border: 3px solid #460160;
+    background: transparent;
+    margin-left:8%;
+    columns: #000000;
+	  color: #000;
+  }  
+  #CorD:hover{
+    background: #460160;
+    color: #fff;
+  }
+/*Botão dos Avatares*/
+
+.avatar2 {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+}
+.avatar2:hover{
+  box-shadow: 1px 1px 2px black, 0 0 25px purple, 0 0 5px darkblue;
+}
+
+#img1, #img2, #img3, #img4 {
+  border:none;
+  background:none;
+  margin-left: 20%;
+  margin-top: 2%;
+}
+
+.redefinir{
+    background: linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+    margin-left: 12%;
+    margin-top: 8%;
+    width: 35%;
+    height: 37px;
+    border-radius: 8px;
+    color:white;
+}
+
+#saveColor{
+    background: linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+    margin-left: 2%;
+    margin-top: 8%;
+    width: 35%;
+    height: 37px;
+    border-radius: 8px;
+    color:white;
+}

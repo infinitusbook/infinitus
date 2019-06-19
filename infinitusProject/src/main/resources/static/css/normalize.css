@@ -257,6 +257,7 @@ textarea {
   color: inherit; /* 1 */
   font: inherit; /* 2 */
   margin: 0; /* 3 */
+	
 }
 
 /**
@@ -264,8 +265,9 @@ textarea {
  */
 
 button {
-  overflow: visible;
+  overflow: visible;	
 }
+
 
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
@@ -278,6 +280,9 @@ button,
 select {
   text-transform: none;
 }
+
+
+
 
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`

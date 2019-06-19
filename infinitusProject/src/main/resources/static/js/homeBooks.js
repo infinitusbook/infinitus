@@ -47,7 +47,7 @@ function bookBox(json){
 	         + "<p class='book-info'> " + item.plusInformation + "</p>"
 	         + "<p class='book-info'> Status: " + item.available + "</p>"
 	         + "</div>"
-	        + "<h3 onclick=\"sendEmail(\'"+item.email +"\',\'" + current_email + "\'," + item.id+")\">quero</h3>"
+	         + "<button class='querobtn123' onclick=\"sendEmail(\'"+item.email +"\',\'" + current_email + "\'," + item.id+")\>QUERO</button></div>"
 	         + "</li>"
 	        );
 	}); 
