@@ -12,8 +12,6 @@
  <link rel="stylesheet" type="text/css" th:href="@{css/slick-theme.css}" />
  <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />	
  <link rel="stylesheet" type="text/css" th:href="@{css/styleSuporte.css}" />
-  <link rel="stylesheet" type="text/css" th:href="@{/css/bookRegister.css}">  
- 
  
 	
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,14 +22,13 @@
 </head>
 <body>
 
-
 <div id="mySidenav" class="sidenav">
 
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
   <div>
   <img id="imgP" src="img/img_avatarp.png" alt="Avatar" class="avatar"><br><br>
-  <span id="UserName" th:utext="${userName}" style='font-size:25px; color: white;'></span>
+  <span id="UserName" th:utext="${userName}" ></span>
   </div> 
 
   <div style="margin-top: 40px;" > 
@@ -89,7 +86,6 @@
   <a href="#" style="font-size: 20px;">Trocados</a>
   <a href="#" style="font-size: 20px;">Empréstimos</a>
   <a href="editProfile.html" th:href="@{/editProfile}">Editar Perfil</a>
-</div>
 
 </div>
 </div>
@@ -123,24 +119,24 @@
 <span style="font-size:30px;cursor:pointer" onclick="openSupp()"><i class='fas fa-headset' style='font-size:25px; color:white'></i></span>
 
  <!--Botão Sair-->
-<a id="buttonExit" th:href="@{/logout}"><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
-
- </button>
-
- 
+<a id="buttonExit" th:href="@{/logout}" ><i class='fas fa-power-off' style='font-size:25px; color:white;'></i>
 
   </div>
-  <!--final menu-->	  
+  <!--final menu-->
+	  
 
 	  	  <!--começo do carrossel-->
-    	   <div class="slider-container">        
-    	      <!--Area dos livros/STANDS-->
-  
-						
-                    <div clss="slider-single">
+    	   <!--<div class="slider-container">-->
+
+                    <!--div id="livros1" class="slider-single first ">
+						<button class=".btnQuero" >Buscar</button></div>
+                    </div-->
+
+                  <!--  <div clss="slider-single">
 
                     <h1 class="categoriaCaroussel">teste</h1>
-                    <div class="slider-single first ">                        			
+                    <div class="slider-single first ">
+						
 						
 						<div class="livro"><img class="slider-image" src="img/2.jpg" alt="1" > 
 						 <button class="querobtn123" >QUERO</button></div>
@@ -223,7 +219,7 @@
                     
                 </div>
 
-            </div>
+            </div>-->
           
 
         <!--fim do caroussel-->
@@ -245,7 +241,7 @@
         <script type="text/javascript" src="js/js_suporte.js"></script>
         <script type="text/javascript" src="js/js_chat.js"></script>
         <script type="text/javascript" src="js/homeBooks.js"></script>
-        
+       
 
  </div>
 </div>

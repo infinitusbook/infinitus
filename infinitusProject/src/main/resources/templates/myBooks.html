@@ -12,6 +12,8 @@
  <link rel="stylesheet" type="text/css" th:href="@{css/slick-theme.css}" />
  <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />	
  <link rel="stylesheet" type="text/css" th:href="@{css/styleSuporte.css}" />
+<link rel="stylesheet" th:href="@{/css/registerBook2.css}">
+<link rel="stylesheet" th:href="@{/css/bookRegister.css}"> 
  
 	
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,6 +23,10 @@
 <meta charset="utf-8"/>
 </head>
 <body>
+
+
+
+
 
 <div id="mySidenav" class="sidenav">
 
@@ -32,7 +38,7 @@
   </div> 
 
   <div style="margin-top: 40px;" > 
-  <!--Modal de Configurações-->
+  <!--Modal de Configurações
   
   <div id="myModal" class="modal">
   <div class="modal-content">
@@ -75,7 +81,7 @@
     class="redefinir">Redefinir Padrão</button> 
   
     <button type="button" id="saveColor">Salvar</button>
-  </div>
+  </div>-->
   
  </div>
  
@@ -90,6 +96,7 @@
 
 </div>
 </div>
+
 
 
 <div id="main">
@@ -127,6 +134,9 @@
  
 
   </div>
+  
+  
+  
   <!--final menu-->
 	  
 
@@ -230,6 +240,88 @@
         <!--fim do caroussel-->
 
 
+<div class="container">
+  <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">Novo Livro</button>
+
+  <!-- Modal -->
+  
+     <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content" >
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button> 
+
+
+<button class="tablink" onclick="openPage('CadastrarLivro', this, 'transparent')">Cadastrar Livro</button>
+<button class="tablink" onclick="openPage('Atualizar', this, 'transparent')" id="defaultOpen">Atualizar</button>
+
+</div>
+        
+<div id=minhaDiv class="modal-body">
+
+<!--Login Form-->
+ <div id="CadastrarLivro" class="tabcontent">
+
+  <div class="cadLivro-box">
+	<form autocomplete="off" action="#" th:action="@{/bookRegister}" th:object="${book}" method="POST" role="form">
+   <center><span style="font-size: 18px; color:#fff;margin-bottom:50px;" th:utext="${successMessage}"></span></center><br><br>						    
+     
+	<h2 style="margin-top: -50px;"><center>Novos Livros</center></h2>
+	<div class="textbox">
+		<input type="text" th:field="*{title}" placeholder="Titulo do Livro" name="" value="" required>
+	</div>
+	
+	<div class="textbox">
+		<input type="text" th:field="*{author}" placeholder="Autor" name="" value="" required>
+	</div>
+
+	<div class="textbox">
+		<input type="text" th:field="*{publisher}" placeholder="Editora" name="" value="" required>
+	</div>
+	  <textarea rows="4" cols="54" th:field="*{plusInformation}" placeholder="Nos conte o que faz esse livro ser tão especial!" name="" value=""></textarea></br></br>
+	
+	<select  class="select" th:name="action" th:id="action" required>
+	<option value="">Você irá doar, emprestar ou trocar este livro?</option>
+		<option value="Doar">Doar</option>
+		<option value="Emprestar">Emprestar</option>
+		<option value="Trocar">Trocar</option>
+	</select>	
+	<div class="button">
+    <button class="btnCadastrar" type="submit" name="" value="Cadastrar";>Cadastrar</button> 
+    <button class=btnCancelar type="button" name="" value="Cancelar";>Cancelar</button> 
+       </div>
+       </form>
+  </div>  
+       </div>   
+  
+</div>
+
+<!--Cadastro form-->
+
+<div id="Atualizar" class="tabcontent">
+ <div class="atualizar-box">
+	<div style="margin-top:-25px">
+	<h1><center>Atualizar Status do Livro</center></h1>
+	
+	
+	
+	
+</div>
+	
+<center><input class="btnAtualiza" type="button" name="" value="Atualizar";></center>
+</div> 
+</div>
+			 </div>
+	 <!-- fim do Conteudo do modal-->
+		 <div class="modal-footer">
+		 
+			 </div>
+		
+		 </div>
+	  </div>
+	</div>
+</div>
+<!--fim do Modal-->
         
         <!--abaixo é o link p igar no javascripito-->
          <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -246,6 +338,9 @@
         <script type="text/javascript" src="js/js_suporte.js"></script>
         <script type="text/javascript" src="js/js_chat.js"></script>
 		<script type="text/javascript" src="js/myBooks.js"></script>
+		
+<script type="text/javascript" src="js/js_status.js"></script>
+		
         
 
  </div>

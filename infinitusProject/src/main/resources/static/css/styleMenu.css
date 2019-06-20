@@ -9,16 +9,7 @@ body {
 	color: white;
 }
 
-  .livros_lista li{
-    background-color:black;
-    text-align:center;
-  }
-
-.livros{
-    padding:60px 0;
-    
-  }
-  
+ 
 .sidenav {
   height: 100%;
   width: 0;

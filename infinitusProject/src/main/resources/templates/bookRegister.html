@@ -14,25 +14,13 @@
 <body>
 
 <div class="container">
-  <!--Acione o modal com o botão -->
-  <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">livro</button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content" >
-        <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	
-        </div>
-        
-        <div id=minhaDiv class="modal-body">
-      <!--Conteudo do modal-->
-         
+  <!--Acione o modal com o botão -->  
+     <div class="input-container">
+     <div id="colunaA">
     <div class="form-box">
     <form autocomplete="off" action="#" th:action="@{/bookRegister}" th:object="${book}" method="POST" role="form">
    <center><span style="font-size: 18px; color:#fff;margin-bottom:50px;" th:utext="${successMessage}"></span></center><br><br>						    
-	<h2 style="margin-top: -50px;"><center>Novos Livros</center></h2>
+	<h2 style="margin-top: -50px;color:white"><center>Novos Livros</center></h2>
 	<div class="textbox">
 		<input type="text" th:field="*{title}" placeholder="Titulo do Livro" name="" value="" required>
 	</div>
@@ -62,11 +50,7 @@
         </div>
         <div class="modal-footer">
         
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div></div>
 
 </body>
 </html>
