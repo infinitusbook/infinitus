@@ -40,6 +40,9 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	private List<Book> books;  
     
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<BookUpdate> booksUpdate;  
+    
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;                    
@@ -145,5 +148,13 @@ public class User {
 	}
 	public void setBooks(List<Book> books) {
 		this.books = books;
+	}
+	public List<BookUpdate> getBooksUpdate() {
+		return booksUpdate;
+	}
+	public void setBooksUpdate(List<BookUpdate> booksUpdate) {
+		this.booksUpdate = booksUpdate;
 	}			
+	
+	
 }

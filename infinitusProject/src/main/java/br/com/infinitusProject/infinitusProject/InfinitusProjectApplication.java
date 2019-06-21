@@ -10,5 +10,5 @@ public class InfinitusProjectApplication {
 		SpringApplication.run(InfinitusProjectApplication.class, args);
 	}
  
-}
- 
+}  
+    

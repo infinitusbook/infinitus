@@ -16,9 +16,12 @@
 	
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">       
 
 <meta charset="utf-8"/>
+
+  <title>Início</title>
+
 </head>
 <body>
 
@@ -28,7 +31,7 @@
 
   <div>
   <img id="imgP" src="img/img_avatarp.png" alt="Avatar" class="avatar"><br><br>
-  <span id="UserName" th:utext="${userName}" ></span>
+  <span id="UserName" th:utext="${userName}" style="font-size: 28px;" ></span>
   </div> 
 
   <div style="margin-top: 40px;" > 
@@ -38,7 +41,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-    <h1>Configurações de Desing</h1>
+    <h1>Configurações de Design</h1>
     
   </div>
   
@@ -79,13 +82,15 @@
   
  </div>
  
-  <h1 style="font-size: 30px; color:white;"><center>Stands</center></h1><br><br>
-  <a href="homeBooks.html" th:href="@{/home}"style="font-size: 20px;">Inicio</a>
+  <h1 style="font-size: 30px; color:white;"><center>Stands</center></h1>
+  <a href="homeBooks" th:href="@{/home}"style="font-size: 20px;">Inicio</a>
   <a href="myBooks" style="font-size: 20px;">Minha Biblioteca</a>
   <a href="#" style="font-size: 20px;">Doados</a>
   <a href="#" style="font-size: 20px;">Trocados</a>
   <a href="#" style="font-size: 20px;">Empréstimos</a>
-  <a href="editProfile.html" th:href="@{/editProfile}">Editar Perfil</a>
+  <a href="editProfile" style="font-size: 20px;">Editar Perfil</a>
+  <a href="bookRegister"  style="font-size: 20px;">Gerenciador de Livros</a>
+  
 
 </div>
 </div>
@@ -119,7 +124,7 @@
 <span style="font-size:30px;cursor:pointer" onclick="openSupp()"><i class='fas fa-headset' style='font-size:25px; color:white'></i></span>
 
  <!--Botão Sair-->
-<a id="buttonExit" th:href="@{/logout}" ><i class='fas fa-power-off' style='font-size:25px; color:white;'></i>
+<a id="buttonExit" th:href="@{/logout}" ><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
 
   </div>
   <!--final menu-->
@@ -241,6 +246,8 @@
         <script type="text/javascript" src="js/js_suporte.js"></script>
         <script type="text/javascript" src="js/js_chat.js"></script>
         <script type="text/javascript" src="js/homeBooks.js"></script>
+        <script type="text/javascript" src="js/js_Configuracao.js"></script>
+        
        
 
  </div>

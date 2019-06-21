@@ -12,21 +12,16 @@
  <link rel="stylesheet" type="text/css" th:href="@{css/slick-theme.css}" />
  <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />	
  <link rel="stylesheet" type="text/css" th:href="@{css/styleSuporte.css}" />
-<link rel="stylesheet" th:href="@{/css/registerBook2.css}">
-<link rel="stylesheet" th:href="@{/css/bookRegister.css}"> 
- 
-	
+ <link rel="stylesheet" type="text/css" th:href="@{css/bookRegister2.css}" />
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
-
 <meta charset="utf-8"/>
+  <title>Minha Biblioteca</title>
+
 </head>
 <body>
-
-
-
-
 
 <div id="mySidenav" class="sidenav">
 
@@ -34,17 +29,18 @@
 
   <div>
   <img id="imgP" src="img/img_avatarp.png" alt="Avatar" class="avatar"><br><br>
-  <span id="UserName" th:utext="${userName}" style='font-size:25px; color: white;'></span>
+  <span id="UserName"  th:text="'Olá, ' + ${session.name} + '!'" style='font-size:28px; color: white;'></span>
   </div> 
 
-  <div style="margin-top: 40px;" > 
-  <!--Modal de Configurações
+  <div style="margin-top: 40px;" >
+  
+  <!--Modal de Configurações-->
   
   <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-    <h1>Configurações de Desing</h1>
+    <h1>Configurações de Design</h1>
     
   </div>
   
@@ -81,25 +77,27 @@
     class="redefinir">Redefinir Padrão</button> 
   
     <button type="button" id="saveColor">Salvar</button>
-  </div>-->
+  </div>
   
  </div>
- 
-  <h1 style="font-size: 30px; color:white;"><center>Stands</center></h1><br><br>
+
+  <h1 style="font-size: 30px; color:white;"><center>Stands</center></h1>
   <a href="homeBooks.html" th:href="@{/home}"style="font-size: 20px;">Inicio</a>
   <a href="myBooks" style="font-size: 20px;">Minha Biblioteca</a>
   <a href="#" style="font-size: 20px;">Doados</a>
   <a href="#" style="font-size: 20px;">Trocados</a>
   <a href="#" style="font-size: 20px;">Empréstimos</a>
-  <a href="editProfile.html" th:href="@{/editProfile}">Editar Perfil</a>
+  <a href="editProfile" style="font-size: 20px;">Editar Perfil</a>
+  <a href="bookRegister"  style="font-size: 20px;">Gerenciador de Livros</a>
 </div>
 
 </div>
-</div>
 
-
+ 
 
 <div id="main">
+
+
   <div id="BP" class="divbarradepesquisa">  
   <span class="hamburguer" onclick="openNav()">&#9776;</span>
   <img src="img/img_logo.png" style="vertical-align: middle;
@@ -131,14 +129,9 @@
 
  </button>
 
- 
-
   </div>
   
-  
-  
   <!--final menu-->
-	  
 
 	  	  <!--começo do carrossel-->
     	   <!--<div class="slider-container">-->
@@ -239,89 +232,6 @@
 
         <!--fim do caroussel-->
 
-
-<div class="container">
-  <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">Novo Livro</button>
-
-  <!-- Modal -->
-  
-     <div class="modal fade" id="myModal" role="dialog">
-       <div class="modal-dialog modal-lg">
-         <div class="modal-content" >
-           <div class="modal-header">
-             <button type="button" class="close" data-dismiss="modal">&times;</button> 
-
-
-<button class="tablink" onclick="openPage('CadastrarLivro', this, 'transparent')">Cadastrar Livro</button>
-<button class="tablink" onclick="openPage('Atualizar', this, 'transparent')" id="defaultOpen">Atualizar</button>
-
-</div>
-        
-<div id=minhaDiv class="modal-body">
-
-<!--Login Form-->
- <div id="CadastrarLivro" class="tabcontent">
-
-  <div class="cadLivro-box">
-	<form autocomplete="off" action="#" th:action="@{/bookRegister}" th:object="${book}" method="POST" role="form">
-   <center><span style="font-size: 18px; color:#fff;margin-bottom:50px;" th:utext="${successMessage}"></span></center><br><br>						    
-     
-	<h2 style="margin-top: -50px;"><center>Novos Livros</center></h2>
-	<div class="textbox">
-		<input type="text" th:field="*{title}" placeholder="Titulo do Livro" name="" value="" required>
-	</div>
-	
-	<div class="textbox">
-		<input type="text" th:field="*{author}" placeholder="Autor" name="" value="" required>
-	</div>
-
-	<div class="textbox">
-		<input type="text" th:field="*{publisher}" placeholder="Editora" name="" value="" required>
-	</div>
-	  <textarea rows="4" cols="54" th:field="*{plusInformation}" placeholder="Nos conte o que faz esse livro ser tão especial!" name="" value=""></textarea></br></br>
-	
-	<select  class="select" th:name="action" th:id="action" required>
-	<option value="">Você irá doar, emprestar ou trocar este livro?</option>
-		<option value="Doar">Doar</option>
-		<option value="Emprestar">Emprestar</option>
-		<option value="Trocar">Trocar</option>
-	</select>	
-	<div class="button">
-    <button class="btnCadastrar" type="submit" name="" value="Cadastrar";>Cadastrar</button> 
-    <button class=btnCancelar type="button" name="" value="Cancelar";>Cancelar</button> 
-       </div>
-       </form>
-  </div>  
-       </div>   
-  
-</div>
-
-<!--Cadastro form-->
-
-<div id="Atualizar" class="tabcontent">
- <div class="atualizar-box">
-	<div style="margin-top:-25px">
-	<h1><center>Atualizar Status do Livro</center></h1>
-	
-	
-	
-	
-</div>
-	
-<center><input class="btnAtualiza" type="button" name="" value="Atualizar";></center>
-</div> 
-</div>
-			 </div>
-	 <!-- fim do Conteudo do modal-->
-		 <div class="modal-footer">
-		 
-			 </div>
-		
-		 </div>
-	  </div>
-	</div>
-</div>
-<!--fim do Modal-->
         
         <!--abaixo é o link p igar no javascripito-->
          <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -338,8 +248,8 @@
         <script type="text/javascript" src="js/js_suporte.js"></script>
         <script type="text/javascript" src="js/js_chat.js"></script>
 		<script type="text/javascript" src="js/myBooks.js"></script>
-		
-<script type="text/javascript" src="js/js_status.js"></script>
+		<script type="text/javascript" src="js/js_bookRegister.js"></script>
+		<script type="text/javascript" src="js/js_Configuracao.js"></script>
 		
         
 
@@ -347,4 +257,7 @@
 </div>
 
 </body>
+
 </html> 
+
+
