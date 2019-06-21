@@ -36,19 +36,18 @@ $(document).ready(function(){
 
 function bookBox(json){
 	let idBox = $("#book-box")
+	
 	json.forEach(function(item){
 		idBox.append(
-			"<li class='grid-4'>"
-			 + "<div class='livros_icone'>"
-	         + "<img src='img/a%20culpa%20e%20das%20estrelas.jpg' alt='livros'>"
+			 "<div class='livro' style='background-color:#000;'>"
+	         + "<img src='img/a%20culpa%20e%20das%20estrelas.jpg' class='slider-image' alt='livros'>"
 	         + "<p class='book-info'> " + item.title + "</p>"
 	         + "<p class='book-info'> " + item.author + "</p>"
 	         + "<p class='book-info'> " + item.publisher + "</p>"
 	         + "<p class='book-info'> " + item.plusInformation + "</p>"
 	         + "<p class='book-info'> Status: " + item.available + "</p>"
-	         + "</div>"
-	         + "<button class='querobtn123' onclick=\"sendEmail(\'"+item.email +"\',\'" + current_email + "\'," + item.id+")\>QUERO</button></div>"
-	         + "</li>"
+	         + "<button class='querobtn123' onclick=\"sendEmail(\'"+item.email +"\',\'" + current_email + "\'," + item.id+")\">QUERO</button>" +
+       		+"</div>"	         
 	        );
 	}); 
 }
