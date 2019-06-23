@@ -16,5 +16,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	List<Book> searchBooks(); 
 	@Query("from Book where user_id =?1")
 	List<Book> searchBooksById(Long user); 	
-	
+	@Query("from Book where action=?1")
+	List<Book> searchBooksByAction(String action);
 }

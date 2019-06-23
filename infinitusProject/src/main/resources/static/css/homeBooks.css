@@ -1,11 +1,14 @@
 body {
 	font-family: 'Titillium Web', sans-serif;	
+	overflow-x: hidden;
 }
 
 .book-info {
-	color: white; 	 	
+	font-family: 'Titillium Web', sans-serif;
+	color: white; 	
+	background:  linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+	font-size: 20px;
 }
-
 
 .sidenav {
   height: 100%;
@@ -115,7 +118,6 @@ body {
   height: 200px;
 }
   .livros_lista li{
-    background-color:black;
     text-align:center;
   }
 
@@ -150,7 +152,6 @@ body {
   
   .livros_icone{
     z-index:1;
-    background:#000;
     padding:10px;
     margin-bottom: 2px;
     color: transparent;
@@ -174,9 +175,9 @@ body {
 
 /*subtitulos*/
     .subtitulo{
-    margin-top: 50px;
-        font-weight:bold;
-        font-size:15px;
+    	font-family: 'Titillium Web', sans-serif;	
+    	margin-top: 50px;
+        font-size:25px;
         line-height:30px;
         letter-spacing: .1em;
         color:#000;

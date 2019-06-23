@@ -10,6 +10,6 @@ import com.infinitusBooks.searchBooks.models.BookUpdate;
 
 @Repository
 public interface BookUpdateRepository extends JpaRepository<BookUpdate, Long>{
-	@Query("from BookUpdate where action=?1")
+	@Query("from BookUpdate where action=?1 and user=?2")
 	List<BookUpdate> searchBooksByActionAndId(String action, Long id);
 }

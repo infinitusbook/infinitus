@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -35,24 +34,37 @@ public class BookService {
 		bookRepository.save(book); 
 	}
 	
+	public void isAvailable(Book book, List<Book> books) {
+		if(book.getAvailable().equals("Y")) {
+			book.setAvailable("Disponível");
+			books.add(book);
+		} else {
+			book.setAvailable("Indisponível");
+			books.add(book);
+		}		
+	}
+	
 	public List<Book> searchBooks() {
 		List<Book> books = new ArrayList<Book>();
 		for (Book book : bookRepository.searchBooks()) {
-			if(book.getAvailable().equals("Y")) {
-				book.setAvailable("Disponível");
-				books.add(book);
-			} else {
-				book.setAvailable("Indisponível");
-				books.add(book);
-			}
+			isAvailable(book, books); 
 		}
 		return books;
 	}
 	
 	public List<Book> searchBooksById(Long userId) {
 		List<Book> books = new ArrayList<Book>();
-		books = bookRepository.searchBooksById(userId);
+		for(Book book : bookRepository.searchBooksById(userId)){
+			isAvailable(book, books); 
+		}
 		return books;		
 	}
 	 
+	public List<Book> searchBooksByAction(String action){
+		List<Book> books = new ArrayList<Book>();
+		for(Book book : bookRepository.searchBooksByAction(action)) {
+			isAvailable(book, books); 
+		}
+		return books;	
+	}
 }

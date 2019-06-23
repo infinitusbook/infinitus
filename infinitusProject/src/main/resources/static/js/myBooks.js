@@ -18,7 +18,7 @@ $(document).ready(function(){
 	
 function booksUser(current_id) {
 	$.ajax({
-		 url: 'http://localhost:8082/book/booksUser/'+current_id,
+		 url: 'http://localhost:8082/book/my-book/'+current_id,
 		 headers: {
 		      'Content-Type':'application/json'
 		    },
@@ -39,14 +39,14 @@ function booksUser(current_id) {
 		json.forEach(function(item){
 			idBox.append(
 				"<li class='grid-4'>"
-				 + "<div class='livros_icone'>"
-		         + "<img src='img/a%20culpa%20e%20das%20estrelas.jpg' alt='livros'>"
-		         + "<p class='book-info'> " + item.title + "</p>"
-		         + "<p class='book-info'> " + item.author + "</p>"
-		         + "<p class='book-info'> " + item.publisher + "</p>"
-		         + "<p class='book-info'> " + item.plusInformation + "</p>"
-		         + "<p class='book-info'> Status: " + item.available + "</p>"
-		         + "</div>"
+				 + "<div class='livro book-info'>"
+		         + "<img src='img/notebook.png' alt='livros' style='width: 100%'>"
+		         + "<center><p>" + item.title + "</p><br>"
+		         + "<p> " + item.author + "</p><br>"
+		         + "<p> " + item.publisher + "</p><br><br>"
+		         + "<p> " + item.plusInformation + "</p><br>"
+		         + "<p> Status: " + item.available + "</p><br></center>"
+		         + "</div><br><br>"
 		         + "</li>"
 		        );
 		}); 

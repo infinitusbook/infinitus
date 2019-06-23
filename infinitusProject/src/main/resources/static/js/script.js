@@ -5,7 +5,7 @@
   dots: true,
   infinite: false,
   speed: 300,
-  slidesToShow: 6,
+  slidesToShow: 4,
   slidesToScroll: 3,
   responsive: [
     {
@@ -77,7 +77,7 @@
           dots: true,
           infinite: false,
           speed: 300,
-          slidesToShow: 6,
+          slidesToShow: 4,
           slidesToScroll: 3,
           responsive: [
             {

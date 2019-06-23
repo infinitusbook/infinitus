@@ -33,11 +33,27 @@ public class BookRestController {
 	}
 	    
 	@CrossOrigin
-	@GetMapping("/booksUser/{id}")
+	@GetMapping("/my-book/{id}")
 	public ResponseEntity<List<Book>> searchBooksUser(@PathVariable("id") Long id) {
 		return ResponseEntity.ok(bookService.searchBooksById(id)); 
 	}
 		
+	@CrossOrigin
+	@GetMapping("/donate")
+	public ResponseEntity<List<Book>> searchBooksByActionDonate() {
+		return ResponseEntity.ok(bookService.searchBooksByAction("Doar"));
+	}
 	
+	@CrossOrigin
+	@GetMapping("/exchange")
+	public ResponseEntity<List<Book>> searchBooksByActionExchange() {
+		return ResponseEntity.ok(bookService.searchBooksByAction("Trocar"));
+	}
+		
+	@CrossOrigin
+	@GetMapping("/borrow")
+	public ResponseEntity<List<Book>> searchBooksByActionBorrow() {
+		return ResponseEntity.ok(bookService.searchBooksByAction("Emprestar"));
+	}
 }
  

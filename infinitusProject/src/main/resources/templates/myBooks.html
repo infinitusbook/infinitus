@@ -7,12 +7,13 @@
 <link rel="stylesheet" type="text/css" th:href="@{css/normalize.css}">
 <link rel="stylesheet" type="text/css" th:href="@{css/reset.css}">
 <link rel="stylesheet" type="text/css" th:href="@{css/grid.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/homeBooks.css}">
+
 <!--CSS caroussel-->
  <link rel="stylesheet" type="text/css" th:href="@{css/slick.css}" />
  <link rel="stylesheet" type="text/css" th:href="@{css/slick-theme.css}" />
  <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />	
  <link rel="stylesheet" type="text/css" th:href="@{css/styleSuporte.css}" />
- <link rel="stylesheet" type="text/css" th:href="@{css/bookRegister2.css}" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
@@ -106,10 +107,7 @@
 
    <!--barra de pesquisa-->
   
-   <div class="search-container">
-      <input type="text" placeholder="Buscar.." name="search">
-
-      <button type="submit"><i class="fa fa-search"></i></button>
+   <div class="search-container" style="margin-right: -400px">
       
         <!--Botão que ativa o modal de Configurações de Design-->
       <button id="myBtn"><i class="fa fa-cog"></i></button> 
@@ -126,111 +124,15 @@
 
  <!--Botão Sair-->
 <a id="buttonExit" th:href="@{/logout}"><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
-
- </button>
-
   </div>
   
   <!--final menu-->
-
-	  	  <!--começo do carrossel-->
-    	   <!--<div class="slider-container">-->
-
-                    <!--div id="livros1" class="slider-single first ">
-						<button class=".btnQuero" >Buscar</button></div>
-                    </div-->
-
-                  <!--  <div clss="slider-single">
-
-                    <h1 class="categoriaCaroussel">teste</h1>
-                    <div class="slider-single first ">
-						
-						
-						<div class="livro"><img class="slider-image" src="img/2.jpg" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/2.jpg" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-						
-						<div><img class="slider-image" src="img/3.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/3.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/4.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/5.jfif" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/6.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-                    </div>
-
-
-                    <h1 class="categoriaCaroussel categoria1">teste2</h1>
-                    <div class="slider-single second">
-						
-                   	
-						<div class="livro"><img class="slider-image" src="img/2.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/2.jpg" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-						
-						<div><img class="slider-image" src="img/3.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/3.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/4.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/5.jfif" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/6.jpg" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-
-                    </div>
-
-                    <h1 class="categoriaCaroussel categoria1">teste2</h1>
-                    <div class="slider-single third">
-						
-                   	
-						<div class="livro"><img class="slider-image" src="img/2.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/2.jpg" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-						
-						<div><img class="slider-image" src="img/3.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/3.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/4.jpg" alt="1" > 
-						 <button class="querobtn123">QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/5.jfif" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-						
-						<div class="livro"><img class="slider-image" src="img/6.jpg" alt="1" > 
-						 <button class="querobtn123" >QUERO</button></div>
-
-                    </div>
-
-
-                    
-                </div>
-
-            </div>-->
-          
-
-        <!--fim do caroussel-->
+ <section class="livros container">
+    <h2 class="subtitulo" id="livros"> MINHA BIBLIOTECA</h2>              
+    <ul id="book-box" class="livros_lista">
+    </ul>
+        
+  </section>
 
         
         <!--abaixo é o link p igar no javascripito-->
@@ -248,7 +150,6 @@
         <script type="text/javascript" src="js/js_suporte.js"></script>
         <script type="text/javascript" src="js/js_chat.js"></script>
 		<script type="text/javascript" src="js/myBooks.js"></script>
-		<script type="text/javascript" src="js/js_bookRegister.js"></script>
 		<script type="text/javascript" src="js/js_Configuracao.js"></script>
 		
         
