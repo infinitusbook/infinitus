@@ -14,16 +14,12 @@
  <link rel="stylesheet" type="text/css" th:href="@{css/slick-theme.css}" />
  <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />	
  <link rel="stylesheet" type="text/css" th:href="@{css/styleSuporte.css}" />
- 
-	
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">       
-
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
 <meta charset="utf-8"/>
-
-  <title>Início</title>
+  <title>Trocados</title>
 
 </head>
 <body>
@@ -34,10 +30,11 @@
 
   <div>
   <img id="imgP" src="img/img_avatarp.png" alt="Avatar" class="avatar"><br><br>
-  <span id="UserName" th:utext="${userName}" style="font-size: 28px;" ></span>
+  <span id="UserName"  th:text="'Olá, ' + ${session.name} + '!'" style='font-size:28px; color: white;'></span>
   </div> 
 
-  <div style="margin-top: 40px;" > 
+  <div style="margin-top: 40px;" >
+  
   <!--Modal de Configurações-->
   
   <div id="myModal" class="modal">
@@ -84,7 +81,8 @@
   </div>
   
  </div>
- 
+
+  
   <h1 style="font-size: 30px; color:white;"><center>Stands</center></h1>
   <a href="homeBooks" th:href="@{/home}"style="font-size: 20px;">Inicio</a>
   <a href="myBooks" style="font-size: 20px;">Minha Biblioteca</a>
@@ -94,12 +92,15 @@
   <a href="editProfile" style="font-size: 20px;">Editar Perfil</a>
   <a href="bookRegister"  style="font-size: 20px;">Gerenciador de Livros</a>
   
-
-</div>
 </div>
 
+</div>
+
+ 
 
 <div id="main">
+
+
   <div id="BP" class="divbarradepesquisa">  
   <span class="hamburguer" onclick="openNav()">&#9776;</span>
   <img src="img/img_logo.png" style="vertical-align: middle;
@@ -108,10 +109,10 @@
 
    <!--barra de pesquisa-->
   
-   <div class="search-container" style="margin-right: -400px;">
+   <div class="search-container" style="margin-right: -400px">
       
         <!--Botão que ativa o modal de Configurações de Design-->
-      <button id="myBtn"><i class="fa fa-cog" ></i></button> 
+      <button id="myBtn"><i class="fa fa-cog"></i></button> 
 
       <!--Botão que aciona o suporte-->
        <div id="mySupport" class="supportnav">
@@ -124,40 +125,16 @@
 <span style="font-size:30px;cursor:pointer" onclick="openSupp()"><i class='fas fa-headset' style='font-size:25px; color:white'></i></span>
 
  <!--Botão Sair-->
-<a id="buttonExit" th:href="@{/logout}" ><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
-
+<a id="buttonExit" th:href="@{/logout}"><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
   </div>
+  
   <!--final menu-->
-	  
-
-	  	  <!--começo do carrossel-->
-    	   <div class="slider-container">
-
-                    <!--div id="livros1" class="slider-single first ">
-						<button class=".btnQuero" >Buscar</button></div>
-                    </div-->
-
-                    <div class="slider-single">
-
-                    <h1 class="categoriaCaroussel categoria1">LIVROS PARA SEREM DOADOS</h1>
-                    <div class="slider-single first" id="book-box-donate">
-                    </div>
-
-                    <h1 class="categoriaCaroussel categoria1">LIVROS PARA SEREM TROCADOS</h1>
-                    <div class="slider-single second" id="book-box-exchange">
-                    </div>
-
-                    <h1 class="categoriaCaroussel categoria1">LIVROS PARA SEREM EMPRESTADOS</h1>
-                    <div class="slider-single third" id="book-box-borrow">
-                    </div>
-                    
-                </div>
-
-            </div>
-          
-
-        <!--fim do caroussel-->
-
+ <section class="livros container">
+    <h2 class="subtitulo" id="livros"> MINHAS TROCAS</h2>              
+    <ul id="book-box" class="livros_lista">
+    </ul>
+        
+  </section>
 
         
         <!--abaixo é o link p igar no javascripito-->
@@ -174,14 +151,16 @@
         <script type="text/javascript" src="js/js_Padrao.js"></script>
         <script type="text/javascript" src="js/js_suporte.js"></script>
         <script type="text/javascript" src="js/js_chat.js"></script>
-        <script type="text/javascript" src="js/homeBooks.js"></script>
-        <script type="text/javascript" src="js/js_Configuracao.js"></script>
-        <script type="text/javascript" src="js/home-books-exchange.js"></script>        
-        <script type="text/javascript" src="js/home-books-donate.js"></script>      
-        <script type="text/javascript" src="js/home-books-borrow.js"></script>        
-        <script type="text/javascript" src="js/email-notification.js"></script>
- 
+		<script type="text/javascript" src="js/exchanged-books.js"></script>
+		<script type="text/javascript" src="js/js_Configuracao.js"></script>
+		
+        
+
  </div>
 </div>
+
 </body>
+
 </html> 
+
+

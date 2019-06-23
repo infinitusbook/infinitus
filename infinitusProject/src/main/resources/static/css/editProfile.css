@@ -1,5 +1,6 @@
 body {
 	font-family: 'Titillium Web', sans-serif;
+	overflow-x: hidden;
 }
 
 .input-container {
@@ -22,7 +23,8 @@ body {
 }
 #colunaA{
 	width: 35%;
-	margin-left:10%;	
+	margin-left:10%;
+	margin-top: 50px;	
 }
 
 #group-1{
@@ -38,6 +40,8 @@ body {
 #colunaB{
 	width: 35%;
 	margin-left:9%;
+	margin-top: 50px;
+
 }
 
 #group-2{

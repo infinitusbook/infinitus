@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.infinitusBooks.searchBooks.models.Book;
+import com.infinitusBooks.searchBooks.models.BookUpdate;
+import com.infinitusBooks.searchBooks.models.User;
 import com.infinitusBooks.searchBooks.services.BookService;
 
 @RestController
@@ -55,5 +57,13 @@ public class BookRestController {
 	public ResponseEntity<List<Book>> searchBooksByActionBorrow() {
 		return ResponseEntity.ok(bookService.searchBooksByAction("Emprestar"));
 	}
+	
+	@CrossOrigin
+	@GetMapping("/action/{action}/user/{id}")
+	public ResponseEntity<List<BookUpdate>> searchBooksByActionAndId(@PathVariable("action") String action, @PathVariable("id") Long userId) {
+		return ResponseEntity.ok(bookService.searchBooksByActionAndId(action, userId));
+	}
+	
+	
 }
  

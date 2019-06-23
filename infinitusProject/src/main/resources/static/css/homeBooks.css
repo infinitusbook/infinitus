@@ -123,7 +123,6 @@ body {
 
 /*borda "EU QUERO"*/
 .livros_lista li:hover{
-    background-color: #581b58;/*roxo*/
     text-align:center;
   } 
   
@@ -211,8 +210,8 @@ body {
 		margin-top: 20px;
 		}
 	.btn:hover{
-		border: 3px solid #431842;
-		color:#431842;
+		border: white;
+		color:white;
 
 		}
 

@@ -7,9 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.infinitusBooks.searchBooks.models.BookUpdate;
+import com.infinitusBooks.searchBooks.models.User;
 
 @Repository
 public interface BookUpdateRepository extends JpaRepository<BookUpdate, Long>{
-	@Query("from BookUpdate where action=?1 and user=?2")
+	@Query("from BookUpdate where action=?1 and user_id=?2")
 	List<BookUpdate> searchBooksByActionAndId(String action, Long id);
 }

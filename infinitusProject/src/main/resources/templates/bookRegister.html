@@ -23,17 +23,6 @@
 
   <title>Gerenciador de Livros</title>
 
-<script>
-$(document).ready(function(){ 
-	$("input#title").val("");
-	$("input#author").val("");
-	$("input#publisher").val("");
-	$("textarea#plusInformation").val("");
-	$("input#action").val("");
-	$("input#emailFriend").val("");
-
-});
-</script>
 </head>
 
 <body>
@@ -118,10 +107,7 @@ $(document).ready(function(){
 
    <!--barra de pesquisa-->
   
-   <div class="search-container">
-      <input type="text" placeholder="Buscar.." name="search" value="Buscar...">
-
-      <button type="submit"><i class="fa fa-search"></i></button>
+   <div class="search-container" style="margin-right: -400px">
       
         <!--Botão que ativa o modal de Configurações de Design-->
       <button id="myBtn"><i class="fa fa-cog"></i></button> 
@@ -140,7 +126,7 @@ $(document).ready(function(){
 <a id="buttonExit" th:href="@{/logout}" ><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
 </div>
 	
-<span style="font-size: 20px; color:#fff;margin-bottom:45px;" th:utext="${successMessage}"></span></center>					    
+<span class='feedback-register' th:utext="${successMessage}"></span></center>					    
 	
 
      <div class="input-container">
@@ -169,7 +155,7 @@ $(document).ready(function(){
 		<option value="Trocar">Trocar</option>
 	</select>	
 	<div class="button">
-    <button class="btnCadastrar" type="submit" name="" value="Cadastrar" onclick="formReset()">Cadastrar</button> 
+    <button class="btnCadastrar" type="submit" name="" value="Cadastrar">Cadastrar</button> 
         <a href="#" th:href="@{/home}">
     <button class=btnCancelar type="button" name="" value="Cancelar";>Cancelar</button> </a>
        </div>
@@ -232,6 +218,18 @@ $(document).ready(function(){
         <script type="text/javascript" src="js/js_suporte.js"></script>
         <script type="text/javascript" src="js/js_chat.js"></script>
         <script type="text/javascript" src="js/js_Configuracao.js"></script>
+        
+<script>
+$(document).ready(function(){ 
+	$("input#title").val("");
+	$("input#author").val("");
+	$("input#publisher").val("");
+	$("textarea#plusInformation").val("");
+	$("input#action").val("");
+	$("input#emailFriend").val("");
+
+});
+</script>
         
        
  </div>

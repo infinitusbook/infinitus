@@ -15,4 +15,24 @@ public class BooksMenuController {
 		return modelAndView; 
 	}		
 
+	@RequestMapping(value = "/donatedBooks", method = RequestMethod.GET) 
+	public ModelAndView donatedBooks() {
+		ModelAndView modelAndView = new ModelAndView(); 
+		modelAndView.setViewName("donatedBooks");
+		return modelAndView; 
+	}		
+
+	@RequestMapping(value = "/exchangedBooks", method = RequestMethod.GET) 
+	public ModelAndView exchangedBooks() {
+		ModelAndView modelAndView = new ModelAndView(); 
+		modelAndView.setViewName("exchangedBooks");
+		return modelAndView; 
+	}		
+
+	@RequestMapping(value = "/borrowedBooks", method = RequestMethod.GET) 
+	public ModelAndView borrowedBooks() {
+		ModelAndView modelAndView = new ModelAndView(); 
+		modelAndView.setViewName("borrowedBooks");
+		return modelAndView; 
+	}		
 }

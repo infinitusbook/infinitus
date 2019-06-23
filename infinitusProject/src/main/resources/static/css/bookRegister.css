@@ -7,10 +7,22 @@ body{
 	padding: 0;
 	font-family: 'Titillium Web', sans-serif;
 	background-size: cover;
-	background-color: #BA55D3;
+	overflow-x: hidden;
+	
 }
+
+.feedback-register{
+	font-size: 20px;
+    color: #fff;
+    margin-top: 16px;
+    text-align: center;
+    width: calc(100% - 320px);
+    position: absolute; 
+}
+
+
 #colunaA{
-	width: 35%;
+	width: 37%;
 	margin-left:10%;
 	margin-top: 9px;
 }
@@ -28,7 +40,7 @@ body{
 }
 
 #colunaB{
-	width: 35%;
+	width: 37%;
 	margin-left:9%;
 	border-color: white;
 	
@@ -42,6 +54,7 @@ body{
 	border: 1px solid #ccc;	
 	border-radius: 4px;	
 	border-color: white;
+	margin-top: 3px;
 	
 }
 
@@ -52,6 +65,7 @@ body{
   margin-bottom: 15px;
   margin-top: 35px;
   color: #BA55D3;
+  font-size: 20px;
 }
 
 /*box do Cadastro de Livros - conteudo do form*/

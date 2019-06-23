@@ -1012,3 +1012,11 @@ O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 00:46h
 O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 00:48h
 O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 00:48h
 O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 00:49h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 02:52h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 03:40h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 03:41h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 04:02h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 04:04h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 04:13h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 04:43h
+O usuário teste@teste.com se logou no dia 23 de Junho de 2019 - 05:12h
