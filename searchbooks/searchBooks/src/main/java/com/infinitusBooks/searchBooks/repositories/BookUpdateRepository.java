@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.infinitusBooks.searchBooks.models.BookUpdate;
-import com.infinitusBooks.searchBooks.models.User;
 
 @Repository
 public interface BookUpdateRepository extends JpaRepository<BookUpdate, Long>{
