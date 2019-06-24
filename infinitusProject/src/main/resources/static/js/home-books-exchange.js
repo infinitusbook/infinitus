@@ -2,7 +2,7 @@ var current_email = "";
 $(document).ready(function(){
 	
 	$.ajax({
-		url: 'http://infinitus-books.azurewebsites.net/email',
+		url: 'http://infinitus-stands.azurewebsites.net/email',
 		headers: {
 			'Content-Type': 'application/json'
 		}, 

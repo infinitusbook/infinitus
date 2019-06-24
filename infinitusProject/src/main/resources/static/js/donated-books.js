@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$.ajax({
-		url: 'http://infinitus-books.azurewebsites.net/id',
+		url: 'http://infinitus-stands.azurewebsites.net/id',
 		headers: {
 			'Content-Type': 'application/json'
 		}, 
@@ -18,7 +18,7 @@ $(document).ready(function(){
 	
 function booksUser(current_id) {
 	$.ajax({
-		 url: 'http://localhost:8082/book/action/doado/user/'+current_id,
+		 url: 'http://localhost:8082/book/action/emprestado/user/'+current_id,
 		 headers: {
 		      'Content-Type':'application/json'
 		    },

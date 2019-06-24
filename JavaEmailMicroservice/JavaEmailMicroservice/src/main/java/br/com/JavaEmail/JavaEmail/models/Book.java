@@ -33,6 +33,8 @@ public class Book {
 	@JoinColumn(name="user_id")
 	private User user;
 		
+	
+	public Book () {}
 	public Long getId() {
 		return id;
 	}

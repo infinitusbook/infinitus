@@ -28,7 +28,6 @@ public class EmailController {
     @Autowired private UserRepository userRepository; 
     @Autowired private BookRepository bookRepository; 
     @Autowired private UserBookQueueRepository userBookQueueRepository; 
-    @Autowired private     	EntityManager entityManager; 
                        
     @CrossOrigin
     @RequestMapping(path = "/email-send/", method = RequestMethod.POST)

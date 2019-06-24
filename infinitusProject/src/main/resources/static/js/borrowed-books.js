@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$.ajax({
-		url: 'http://infinitus-books.azurewebsites.net/id',
+		url: 'http://infinitus-stands.azurewebsites.net/id',
 		headers: {
 			'Content-Type': 'application/json'
 		}, 
