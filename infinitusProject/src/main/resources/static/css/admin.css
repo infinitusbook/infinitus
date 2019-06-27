@@ -1,0 +1,136 @@
+/* == css reset == */
+* { 
+  margin: 0; 
+  padding: 0;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    height: 900px;
+}
+
+/* == MENU == */
+.cabecalho {
+  width: 100%;
+  height: 65px; 
+  float: left; 
+  background-color: #8A05BE;
+  margin-bottom: 30px;
+}
+
+.logo {
+   width: 100px;
+   height: 56px;
+   float: left;
+   margin-top: 3px;
+   margin-left: 10px;
+   background: url(../img/logo_branco.png) center center/100px no-repeat;
+   font-size: 0px; 
+}
+
+.btn-sair{
+  float: right;
+  margin-right: 20px;
+ margin-top: 13px;
+ color: #fff;
+ background-color: #8A05BE;
+ border-color: #fff;
+ }
+
+ /* == FIM DO MENU == */
+
+/* == ADMINISTRADOR == */
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+} 
+
+/* == FIM DO ADMINISTRADOR == */
+
+/* == IMPORTAÇÃO == */
+.card-header {
+  background-color: #8A05BE;
+  color: #fff;
+  height: 50px;
+}
+
+.card-header h1 {
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.text-center1 {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+.form-group1 {
+  height: 140px;
+}
+
+.form-control-file {
+  margin-top: 30px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-importar {
+  margin-left: 5px;
+  background-color: #8A05BE;
+  color: #fff;
+}
+
+/* == FIM DA IMPORTAÇÃO == */
+
+/* == EXPORTAÇÃO == */
+
+.text-center2 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-group2 {
+  height: 290px;
+}
+
+.form-group2 h3 {
+  margin-top: 30px;
+  font-size: 1.5em;
+  margin-left: 5px;
+}
+
+.de {
+  margin-left: 5px;
+}
+
+.para {
+  margin-left: 5px;
+}
+
+.btn-importar {
+  margin-top: 30px;
+}
+
+/* == FIM DA EXPORTAÇÃO == */
+
+/* == RESPONSIVIDADE == */
+
+@media screen and (min-width: 768px) {
+
+/* == MENU == */
+.btn-sair{
+  float: right;
+  margin-right: 20px;
+  margin-top: 13px;
+  color: #fff;
+  background-color: #8A05BE;
+  border-color: #fff;
+  }
+
+
+
+
+}

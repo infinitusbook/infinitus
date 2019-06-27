@@ -1,0 +1,170 @@
+
+
+
+/*Area dos livros*/
+
+  .categoriaCaroussel{
+    font-weight:bold;/*deixar as letras tipo negrito*/
+    font-size:20px;
+    text-transform:uppercase;/*todas letras em maiusculo*/
+    letter-spacing: .1em;/*espaçamento entre as letras*/
+    margin-bottom: 10px;
+    color: black;
+    
+  } 
+  
+ /*linha de separar conteudo
+ 
+    .categoriaCaroussel:after{
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 15px;
+      border-top: 1px solid #000;
+  }
+
+  .categoria1:after{
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 15px;
+      border-top: 1px solid #000;
+  }
+*/
+
+	
+
+
+/*STYLE CAROUSSEL*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.slider-container{
+	width:80%;/*diminui a caixa de livros*/
+    margin:0 auto;
+    position:relative;
+    margin-top: 100px;/*s slider ficar alto de mais ele fica bugado*/
+    z-index: -99;
+}
+
+.item{
+	border: 3px solid red;
+	width:80%;/*diminui os livros*/
+	height: 300px;
+	position: relative;
+	padding: 5px;
+   
+}
+
+.slick-prev, .slick-next{
+	color: black;/*botão de arrastar o slide*/
+    background:black;
+	border-radius: 50%;
+	column-span: none;
+	width: 60px;
+	height: 60px;
+	margin-left: 0.5%;
+	z-index: 90;
+	
+}
+
+/*.icon-slider2{
+	float: right;
+	margin-top: 11%;
+	margin-left: 1%;
+	padding: 20px;
+	background-color: yellow;
+	border: 3px solid red;
+
+}
+
+.icon-slider1{
+	float: left;
+	margin-right: 2px;
+	margin-top: 11%;
+	padding: 20px;
+	background-color: yellow;
+	border: 3px solid green;
+}*/
+
+.slider-image{
+	width: 100%;/*tamanho da imagem*/
+	height: 300px;
+	border: 3px solid transparent;/*tem borda tranparente par a imagem ficar do mesmo tamanho*/
+	position:relative;
+
+}
+
+.slider-image:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition-delay: inherit;
+    
+}
+
+.querobtn123{
+	width: 97%;
+  height: 55px;
+	background:linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+	border: none;
+	color: white;
+	padding: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	margin-left:2px;
+  margin-top: 2%;
+  -webkit-transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+}
+
+
+
+
+

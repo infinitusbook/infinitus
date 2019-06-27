@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{css/styleMenu.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/normalize.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/reset.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/grid.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/homeBooks.css}">
+
+<!--CSS caroussel-->
+ <link rel="stylesheet" type="text/css" th:href="@{css/slick.css}" />
+ <link rel="stylesheet" type="text/css" th:href="@{css/slick-theme.css}" />
+ <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />	
+ <link rel="stylesheet" type="text/css" th:href="@{css/styleSuporte.css}" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
+<meta charset="utf-8"/>
+  <title>Empréstimos</title>
+
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <div>
+  <img id="imgP" src="img/img_avatarp.png" alt="Avatar" class="avatar"><br><br>
+  <span id="UserName"  th:text="'Olá, ' + ${session.name} + '!'" style='font-size:28px; color: white;'></span>
+  </div> 
+
+  <div style="margin-top: 40px;" >
+  
+  <!--Modal de Configurações-->
+  
+  <div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+    <h1>Configurações de Design</h1>
+    
+  </div>
+  
+   <div id=minhaDiv class="modal-body">
+    <h3>Cores:</h3>
+
+    <button id="CorA" type="button" onclick="mudarCor('#8A05BE');">Pantone</button>
+    <button id="CorB" type="button" onclick="mudarCor('#0c0011');">Blackcurrant</button>
+    <button id="CorC" type="button" onclick="mudarCor('#66028c');">Metallic Violet</button>
+    <button id="CorD" type="button" onclick="mudarCor('#460160');">Electric Purple</button>
+
+    <h2>Avatar:</h2>
+
+
+    <button id="img1" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar.png'">
+      <img src="img/img_avatar.png" class="avatar2">
+    </button>
+
+    <button id="img2" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar3.png'">
+     <img src="img/img_avatar3.png" class="avatar2">
+    </button><br>
+
+    <button id="img3" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar4.png'">
+      <img src="img/img_avatar4.png" class="avatar2">
+    </button>
+
+    <button id="img4" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar5.png'">
+     <img src="img/img_avatar5.png" class="avatar2">
+    </button>
+    
+   </div>
+   
+    <button  id="imgR" type="button" onclick="redefinirPadrao('linear-gradient(135deg, #65799b 0%,#5e2563 100%)','img/img_avatarp.png')"
+    class="redefinir">Redefinir Padrão</button> 
+  
+    <button type="button" id="saveColor">Salvar</button>
+  </div>
+  
+ </div>
+
+  
+  <h1 style="font-size: 30px; color:white;"><center>Stands</center></h1>
+  <a href="homeBooks" th:href="@{/home}"style="font-size: 20px;">Inicio</a>
+  <a href="myBooks" style="font-size: 20px;">Minha Biblioteca</a>
+  <a href="donatedBooks" style="font-size: 20px;">Doados</a>
+  <a href="exchangedBooks" style="font-size: 20px;">Trocados</a>
+  <a href="borrowedBooks" style="font-size: 20px;">Empréstimos</a>
+  <a href="editProfile" style="font-size: 20px;">Editar Perfil</a>
+  <a href="bookRegister"  style="font-size: 20px;">Gerenciador de Livros</a>
+  
+</div>
+
+</div>
+
+ 
+
+<div id="main">
+
+
+  <div id="BP" class="divbarradepesquisa">  
+  <span class="hamburguer" onclick="openNav()">&#9776;</span>
+  <img src="img/img_logo.png" style="vertical-align: middle;
+  width: 120px; margin-left: 62px;
+    margin-top: 9px;">
+
+   <!--barra de pesquisa-->
+  
+   <div class="search-container" style="margin-right: -400px">
+      
+        <!--Botão que ativa o modal de Configurações de Design-->
+      <button id="myBtn"><i class="fa fa-cog"></i></button> 
+
+      <!--Botão que aciona o suporte-->
+       <div id="mySupport" class="supportnav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeSupp()">&times;</a>
+  <div style="margin-left: 20px;">
+        <iframe src="https://infinitus-book.tomticket.com/formulario?id=EP32224&account=2062336P12062019081256" class="formulario-suporte"></iframe>
+    </div>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openSupp()"><i class='fas fa-headset' style='font-size:25px; color:white'></i></span>
+
+ <!--Botão Sair-->
+<a id="buttonExit" th:href="@{/logout}"><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
+  </div>
+  
+  <!--final menu-->
+ <section class="livros container">
+    <h2 class="subtitulo" id="livros"> MEUS EMPRÉSTIMOS</h2>              
+    <ul id="book-box" class="livros_lista">
+    </ul>
+        
+  </section>
+
+        
+        <!--abaixo é o link p igar no javascripito-->
+         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+            <!--abaixo é o link  do slick do caroussel-->
+             <!--JS caroussel-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/js_background.js"></script>
+	    <script type="text/javascript" src="js/js_Menu.js"></script>
+        <script type="text/javascript" src="js/js_modal.js"></script>
+        <script type="text/javascript" src="js/js_Padrao.js"></script>
+        <script type="text/javascript" src="js/js_suporte.js"></script>
+        <script type="text/javascript" src="js/js_chat.js"></script>
+		<script type="text/javascript" src="js/borrowed-books.js"></script>
+		<script type="text/javascript" src="js/js_Configuracao.js"></script>
+		
+        
+
+ </div>
+</div>
+
+</body>
+
+</html> 
+
+

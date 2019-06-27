@@ -1,0 +1,268 @@
+<!-- Larissa, Franciele, Carlos, Luiz e 
+jéssica - Tela de Login/Cadastro com validações do Thymeleaf e login do facebook -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="UTF-8">
+        <title>Stands.</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/institutional.css}">
+        <link rel="stylesheet" th:href="@{/css/loginRegister.css}">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">       
+<meta charset="utf-8"/>
+</head>
+
+    <body>                              
+        <div class="container">
+        
+  
+  <!-- Modal -->
+  
+     <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content" >
+           <div class="modal-header">
+
+
+<button class="tablink" onclick="openPage('Login', this, 'transparent')">Login</button>
+<button class="tablink" onclick="openPage('Cadastro', this, 'transparent')" id="defaultOpen">Cadastro</button>
+<button type="button" class="close" data-dismiss="modal">&times;</button> 
+
+</div>
+        
+<div id=minhaDiv class="modal-body">
+
+<!--Login Form-->
+ <div id="Login" class="tabcontent">
+ <!-- Larissa - Form que envia informações do usuário a partir do thymeleaf -->
+  <form autocomplete="off" th:action="@{/login}" method="POST">
+  <div class="login-box">
+    <h1><center>Login</center></h1>
+     <div class="textbox">
+       <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" id="email" name="email" th:placeholder="Email" required>
+    </div>
+    
+    <div class="textbox">
+        <i class="fa fa-lock" arial-hidden="true"></i>
+        <input  type="password" th:placeholder="Senha" id="password" name="password" required>
+    </div>
+           
+                  
+                  
+    <center>
+ <button class="btnlogin" name="Submit" value="Login"
+                      type="Submit" th:text="Login"></button>
+                    <button class="loginBtn loginBtn--facebook">Login com
+                      Facebook</button>   
+       </div>   
+                </form>
+  
+</div>
+
+<!--Cadastro form-->
+
+<div id="Cadastro" class="tabcontent">
+ <!-- Larissa - Form que envia informações do usuário a partir do thymeleaf, validando campos e disparando mensagens quando necessário -->
+              <form autocomplete="off" action="#" th:action="@{/registration}"
+                th:object="${user}" method="POST" role="form">
+ <div class="cadastro-box"> 
+    <div style="margin-top: -25px">
+    <center><span style="font-size: 24px; color:#ff1a1a;" th:errors="*{email}"></span></center>
+    <h1><center>Cadastro</center></h1>    
+    <div class="textbox">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" th:field="*{name}" placeholder="Nome" required>
+    </div>
+    <div class="textbox">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" th:field="*{lastName}" placeholder="Sobrenome" required>
+    </div>
+    <div class="textbox">
+        <i class="fa fa-envelope" arial-hidden="true"></i>
+        <input type="text" th:field="*{email}"  placeholder="Email"  required/>
+    </div>
+    
+    <div class="textbox">
+        <i class="fa fa-lock" arial-hidden="true"></i>
+        <input type="password" placeholder="Senha" minlength=6 name="" value="" required>
+    </div>
+        <div class="textbox">
+        <i class="fa fa-lock" arial-hidden="true"></i>
+        <input type="password" th:field="*{password}"
+                        placeholder="Confirmar senha" minlength=6 required>
+    </div>
+</div>    
+<center>
+<button class="btnCadastro" type="submit" name="Submit"
+                th:text="Cadastrar"></button>
+              <button class="CadastroBtn loginBtn--facebook">
+                Cadastre-se com Facebook</button>
+</center>
+</div> 
+</div>
+             </div>
+     <!-- fim do Conteudo do modal-->
+         <div class="modal-footer">
+         
+             </div>
+        
+         </div>
+      </div>
+    </div>
+</div>
+<!--fim do Modal-->
+
+        <div id="about">
+            <div id="about-bg-diagonal" class="bg-parallax"></div>
+
+            <div class="container">
+	          <span style="font-size: 22px; color:#000;" th:utext="${successMessage}" th:class="${'alert'}"></span>   
+		       <span th:if="${param.error}" style="font-size: 22px; color: #000;">E-mail ou senha inválidos. Por favor, verifique.</span> 
+		
+                <div class="row">
+                    <div class="col-md-4">
+                        <div id="about-content-box">
+                            <div id="about-content-box-outer">
+                            <div id="about-content-box-inner">
+                                <div class="content-title">
+                                        <img src="img/bg4.png" width="250px" height="100px"/>
+                                </div> 
+                                <div id="about-desc">
+                                    <p>A sua biblioteca online e gratuita. 
+                                    </p>
+                                </div>
+                                  <div id="about-btn">
+                                 <!--Acione o modal com o botão -->
+                                    <button type="button" class="btn btn-info btn-lg" id="btnModal" data-toggle="modal" data-target="#myModal">Entrar</button>
+                                   </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="apresentacao">
+            <h1>O que é a Stands?</h1><br>
+            
+                 <p>A Stands é muito mais do que apenas uma biblioteca online onde você poderá doar, trocar e emprestar livros. 
+                    É um projeto cujo o objetivo principal é incentivar a leitura entre estudantes e aproximar pessoas com gostos similares,
+                    afim de criar uma rede saudável de relacionamentos onde a troca de experiências será incrível.
+                    Não perca tempo e cadastre-se já, venha fazer parte dessa plataforma e amplie os seus conhecimentos!</p>
+            
+                    
+                 <div class="card-deck">
+                        <div class="card">
+                          <img class="card-img-top" src="img/doe.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h3 class="card-title"><b>Doe</b></h3>
+                            <p class="card-text">Não sabe o que fazer com aquele livro que está esquecido na sua prateleira? Aqui você pode disponibilizá-lo para doação.</p>
+                           
+                          </div>
+                        </div>
+                        <div class="card">
+                          <img class="card-img-top" src="img/troque.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h3 class="card-title"><b>Troque</b></h3>
+                            <p class="card-text">Está difícil encontrar aquele livro que o seu professor recomendou? Faça uma troca!</p>
+                            
+                          </div>
+                        </div>
+                        <div class="card">
+                          <img class="card-img-top" src="img/empreste.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h3 class="card-title"><b>Empreste</b></h3>
+                            <p class="card-text">Seu amigo tem aquele livro dos seus sonhos, mas você não tem dinheiro pra comprar? Peça emprestado.</p>
+                           
+                          </div>
+                        </div>
+                      </div> 
+
+
+
+
+        </div>
+          
+          <div class="empresa">
+            <h1>Sobre a Infinitus...</h1><br>
+            <p>A Infinitus surgiu como um projeto de semestre na faculdade. Nosso primeiro projeto foi uma estufa caseira sustentável onde a temperatura era medida através de um arduíno com sensor de temperatura. A parceria deu tão certo que decidimos voltar com o grupo para o terceiro semestre do curso de análise e desenvolvimento de sistemas tendo como foco principal a criação de um projeto que agregasse além do valor financeiro, um valor social. Nossa empresa tem os seguintes objetivos:
+                <br><br><b>Missão:</b> Proporcionar aos nossos clientes uma melhor qualidade de vida de maneira simples e prática.<br><br>
+                <b>Visão:</b> Estar entre as empresas que fazem diferença não só no mercado quanto na vida das pessoas.<br><br>
+                <b>Valores:</b> Praticidade, comprometimento, integridade, conhecimento, inovação e ética.
+                </p>
+          </div>
+          
+          <div id="colaboradores">
+            <h1>Conheça nossa equipe</h1>
+            
+            <div class="larissa">
+                <img src="img/larrys.jpg"/>
+                <h1>Larissa Souza</h1>
+                <p>Desenvolvimento - (back-end)</p>
+            </div>
+
+            <div class="franciele">
+                <img src="img/franciele.jpg"/>
+                <h1>Franciele Santos</h1>
+                <p>Desenvolvimento - (front-end)</p>
+            </div>
+
+            <div class="jessica">
+                <img src="/img/eu1.jpg"/>
+                <h1>Jéssica Santos</h1>
+                <p>P.O/Desenvolvimento - (front-end)</p>
+            </div>
+
+            <div class="alice">
+                <img src="/img/alice.jpg"/>
+                <h1>Alice Coelho</h1>
+                <p>Desenvolvimento - (front-end)</p>
+            </div>
+
+            <div class="luiz">
+                <img src="/img/luiz2.jpg"/>
+                <h1>Luiz Alves</h1>
+                <p>Desenvolvimento - (back-end)</p>
+            </div>
+
+            <div class="cadu">
+                <img src="/img/carlos2.jpg"/>
+                <h1>Carlos Brentan</h1>
+                <p>Scrum Master/Documentação</p>
+            </div>
+        </div>
+
+        <footer class="rodape">
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                </div>
+                <p class="copyright"> 
+                    Copyright © Infinitus 2019. Todos os direitos reservados. </p>
+                </footer>
+
+  <script type="text/javascript" src="js/loginRegisterModal.js"></script>
+
+    </body>
+
+</html>

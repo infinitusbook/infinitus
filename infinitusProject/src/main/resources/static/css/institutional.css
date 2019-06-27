@@ -1,0 +1,571 @@
+body{
+    font-family: 'Titillium Web', sans-serif;
+    height: 1870px;
+}
+/* reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* == Parallax == */
+.content-title {
+  margin-top: 70px;
+}
+
+#about-bg-diagonal {
+  background-image: none;
+}
+
+.content-title > img {
+  margin-left: 136px;
+  margin-bottom: -5px;
+}
+
+#about-desc > p {
+  margin-left: 115px;
+}
+
+
+#about-btn {
+  margin-left: 138px;
+  margin-bottom: 100px;
+} 
+
+.btn-primary{
+  padding: 15px 70px;
+  background-color: #8a05be;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+}
+
+.btn-primary:hover{
+  background-color: rgb(175, 58, 162);
+}
+
+
+/* == Fim do Parallax == */
+
+/* == Apresentação == */
+
+.apresentacao{
+  color: #fff;
+  background:linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+  padding:50px 80px;
+  margin-top: 0px;
+}
+
+.apresentacao > h1 {
+  font-size: 2em;
+  text-align:center;
+}
+
+.apresentacao > p {
+  font-size: 1em;
+  text-align: left;
+}
+
+.card-deck{
+  margin-top: 40px;
+  color: rgb(128, 121, 121);
+}
+
+.card-body > h3 {
+  text-align:center;
+}
+
+.card{
+  border: none;
+}
+
+.card-text {
+  font-size: 20px;
+}
+
+/* == fim da Apresentação do Site */
+
+/* == Empresa == */
+
+.empresa{
+  color: #fff;
+  background-color:#2b2a2a;
+  text-align:center;
+  padding:50px 80px;
+  text-align: justify;
+}
+
+.empresa > h1 {
+  font-size: 2em;
+  text-align:center;
+}
+
+.empresa > p {
+  font-size: 1em;
+  text-align: left;
+}
+
+/* == Fim de Empresa == */
+
+/* == Equipe == */
+
+#colaboradores > h1 {
+  text-align:center;
+  margin-left: 10px;
+  font-size:2em; 
+  margin-top: 30px;
+}
+
+#colaboradores > div > img{
+width: 200px; height: 200px; 
+border-radius: 100px; 
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); 
+margin-top: 20px;
+margin-left: 145px;
+}
+
+.jessica {
+  margin-bottom: 70px;
+} 
+
+.jessica h1 {
+  font-size:1.8em; 
+  color: #2b2a2a; 
+  margin-left: 159px;
+  margin-top: 15px;
+}
+
+.jessica p { 
+  margin-left: 110px;
+  font-size: 18px;
+}
+
+.franciele {
+  margin-bottom: 70px;
+} 
+
+.franciele h1 {
+  font-size:1.8em; 
+  color: #2b2a2a; 
+  margin-left: 140px;
+  margin-top: 15px;
+}
+
+.franciele p {
+  margin-left: 125px;
+  font-size: 18px;
+}
+
+.larissa {
+  margin-top: 30px;
+  margin-bottom: 70px;
+} 
+
+.larissa h1 {
+  font-size:1.8em; 
+  color: #2b2a2a; 
+  margin-left: 160px;
+  margin-top: 15px;
+}
+
+.larissa p {
+  margin-left: 130px;
+  font-size: 18px;
+}
+
+.cadu{
+margin-bottom: 100px;
+} 
+
+.cadu h1 {
+font-size:1.8em; 
+color: #2b2a2a; 
+margin-left: 155px;
+margin-top: 15px;
+}
+
+.cadu p {
+margin-left: 10px;
+font-size: 18px;
+text-align: center;
+margin-bottom: 100px;
+}
+
+.luiz {
+    margin-bottom: 70px;
+  } 
+
+.luiz h1 {
+  font-size:1.8em; 
+  color: #2b2a2a; 
+  margin-left: 185px;
+  margin-top: 15px;
+}
+
+.luiz p {
+margin-left: 130px;
+font-size: 18px;
+}
+
+.alice {
+  margin-bottom: 70px;
+} 
+
+.alice h1{
+  font-size:1.8em; 
+  color: #2b2a2a; 
+  margin-left: 170px;
+  margin-top: 15px;
+}
+
+.alice p {
+  margin-left: 130px;
+  font-size: 18px;
+}
+
+/* == fim da Equipe == */
+
+/* == Footer == */
+
+.rodape { 
+  width: 100%; 
+  float: left; 
+  padding: 3% 4%; 
+  text-align: center; 
+  background: #2b2a2a;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a {
+  font-size: 1.5em; 
+  color: rgba(255, 255, 255, 0.979); 
+  margin-right: 3%;
+  padding: 10px;
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
+.social-icons a:hover {
+  color: #c160e7;
+}
+
+.copyright {
+  margin-top: 20px; 
+  color: rgba(255, 255, 255, 0.979);
+}
+
+/* == fim do Footer == */
+
+/* == Responsividade == */
+
+  @media screen and (min-width: 768px) {
+    
+    /* == Parallax == */
+
+.row {
+  background-color: #fff;
+  height: 600px;
+}
+
+#about {
+  background-color: #fff;
+  height: 600px;
+}
+
+#about-bg-diagonal {
+    width: 60%;
+    height: 600px;
+    float: right;
+    background-image: url(../img/stand.jpg);
+    border-left:  200px solid #fff;
+    border-top: 600px solid transparent;
+    background-position: fixed;
+    opacity: 0.8;
+}
+
+#about-content-box{
+    float: left;
+    height: 700px;
+}
+
+#about-content-box-outer{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+#about-content-box-inner{
+ display: table-cell;
+ vertical-align: middle;
+}
+
+.bg-parallax{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#about .content-title h3{
+    text-align: left;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+#about-desc p {
+    margin-bottom: 30px;
+}
+
+.btn-primary{
+    padding: 15px 70px;
+    background-color: #8a05be;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+}
+
+.btn-primary:hover{
+  background-color: rgb(175, 58, 162);
+}
+
+#about-desc {
+  color: #000;
+  font-size: 18px;
+}
+
+.content-title{
+  color: #000;
+}
+
+#about-content-box-outer{
+  height: 600px;
+  margin-left: -90px;
+}
+
+.col-md-4{
+  height: 600px;
+}
+
+/* == Fim do Parallax == */
+
+/* == Apresentação do site == */
+
+.apresentacao{
+  color: #fff;
+  background-color: #8a05be;
+  padding: 50px 80px;
+  margin-top: 0px;
+}
+
+.apresentacao > h1 {
+  text-align:center;
+}
+
+.apresentacao > p {
+  font-size: 20px;
+}
+
+.card-deck{
+  margin-top: 40px;
+  color: rgb(128, 121, 121);
+}
+
+.card-body > h3 {
+  text-align:center;
+}
+
+.card{
+  border: none;
+}
+
+.card-text {
+  font-size: 20px;
+}
+
+/* == fim da Apresentação do Site */
+
+/* == História da Empresa == */
+  .empresa{
+    color: #fff;
+    background-color:#2b2a2a;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+  }
+  
+  .empresa > h1 {
+    text-align:center;
+  }
+
+  .empresa > p {
+    font-size: 20px;
+  }
+
+  /* == fim da História da Empresa */
+
+  /* == Equipe == */
+  
+  #colaboradores {
+    width: 100%; 
+    height: 50%;
+    color: #2b2a2a;
+    background-color:#fff;
+    text-align:center;
+    padding: 50px 80px;
+    text-align: justify;
+  }
+
+  #colaboradores > h1 {
+    text-align:center;
+    margin-top: -2px;
+  }
+  
+  #colaboradores > div{
+    width: 250px; 
+    height: 400px; 
+    float: right; 
+    text-align: center; 
+    color: #2b2a2a;
+    margin-top: 40px;
+    margin-right: 100px;
+  }
+  #colaboradores > div > img{
+    width: 200px; height: 200px; 
+    border-radius: 100px; 
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); 
+    margin-top: 20px;
+    margin-left: -30px;
+  }
+
+
+  .jessica h1 {
+    font-size:1.8em; 
+    color: #2b2a2a; 
+    margin-left: -30px;
+    margin-top: 15px;
+  }
+
+  .jessica p { 
+    margin-left: -30px;
+    font-size: 18px;
+    margin-bottom: 400px;
+  }
+
+  .franciele h1 {
+    font-size:1.8em; 
+    color: #2b2a2a; 
+    margin-left: -30px;
+    margin-top: 15px;
+  }
+
+  .franciele p {
+    margin-left: -30px;
+    font-size: 18px;
+  }
+
+  .larissa h1 {
+    font-size:1.8em; 
+    color: #2b2a2a; 
+    margin-left: -30px;
+    margin-top: 15px;
+  }
+
+  .larissa p {
+    margin-left: -30px;
+    font-size: 18px;
+  }
+
+
+  .cadu h1 {
+    font-size:1.8em; 
+    color: #2b2a2a; 
+    margin-left: -30px;
+    margin-top: 15px;
+  }
+
+  .cadu p {
+    margin-left: -30px;
+    font-size: 18px;
+    margin-bottom: -200px;
+  }
+
+  .luiz h1 {
+    font-size:1.8em; 
+    color: #2b2a2a; 
+    margin-left: -30px;
+    margin-top: 15px;
+  }
+
+  .luiz p {
+    margin-left: -30px;
+    font-size: 18px;
+  }
+
+  .alice h1{
+    font-size:1.8em; 
+    color: #2b2a2a; 
+    margin-left: -30px;
+    margin-top: 15px;
+  }
+
+  .alice p {
+    margin-left: -30px;
+    font-size: 18px;
+  }
+
+  .contatos{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: -20px;
+  }
+
+  .contatos > img{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 100px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 3% 4%; 
+  }
+  
+  /* == fim da Equipe == */
+
+  /* == Footer == */
+
+  .rodape { 
+    width: 100%;
+    float: left; 
+    padding: 3% 4%; 
+    text-align: center; 
+    background: #2b2a2a;
+  }
+  
+  .social-icons a {
+    font-size: 1.5em; 
+    color: rgba(255, 255, 255, 0.979); 
+    margin-right: 3%;
+  }
+  .social-icons a:last-child {
+    margin-right: 0;
+  }
+  .social-icons a:hover {
+    color: #c160e7;
+  }
+  .copyright {
+    margin-top: 2%; 
+    color: rgba(255, 255, 255, 0.979);
+  }
+
+  /* == fim do Footer == */
+
+  }

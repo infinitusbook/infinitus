@@ -1,0 +1,213 @@
+<!-- Larissa e Franciele - Tela de Editar perfil com validações do Thymeleaf e consulta de CEP com a API WideNet -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{css/styleMenu.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/normalize.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/reset.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/grid.css}">
+ <link rel="stylesheet" type="text/css" th:href="@{css/editProfile.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{css/styleSuporte.css}" />
+ 
+	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">       
+
+<meta charset="utf-8"/>
+
+  <title>Editar Perfil</title>
+
+<script type="text/javascript">
+function mascara(t, mask){	
+	var i = t.value.length;
+		var saida = mask.substring(1, 0);
+		var texto = mask.substring(i)
+		if (texto.substring(0, 1) != saida) {
+			t.value += texto.substring(0, 1);
+		}
+	}
+</script>   
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <div>
+  <img id="imgP" src="img/img_avatarp.png" alt="Avatar" class="avatar"><br><br>
+  <span id="UserName"  th:text="'Olá, ' + ${session.name} + '!'" style='font-size:28px; color: white;'></span>
+  </div> 
+
+  <div style="margin-top: 40px;" > 
+  <!--Modal de Configurações-->
+  
+  <div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+    <h1>Configurações de Design</h1>
+    
+  </div>
+  
+   <div id=minhaDiv class="modal-body">
+    <h3>Cores:</h3>
+
+    <button id="CorA" type="button" onclick="mudarCor('#8A05BE');">Pantone</button>
+    <button id="CorB" type="button" onclick="mudarCor('#0c0011');">Blackcurrant</button>
+    <button id="CorC" type="button" onclick="mudarCor('#66028c');">Metallic Violet</button>
+    <button id="CorD" type="button" onclick="mudarCor('#460160');">Electric Purple</button>
+
+    <h2>Avatar:</h2>
+
+
+    <button id="img1" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar.png'">
+      <img src="img/img_avatar.png" class="avatar2">
+    </button>
+
+    <button id="img2" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar3.png'">
+     <img src="img/img_avatar3.png" class="avatar2">
+    </button><br>
+
+    <button id="img3" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar4.png'">
+      <img src="img/img_avatar4.png" class="avatar2">
+    </button>
+
+    <button id="img4" type="button" onclick="document.getElementById('imgP').src= 'img/img_avatar5.png'">
+     <img src="img/img_avatar5.png" class="avatar2">
+    </button>
+    
+   </div>
+   
+    <button  id="imgR" type="button" onclick="redefinirPadrao('linear-gradient(135deg, #65799b 0%,#5e2563 100%)','img/img_avatarp.png')"
+    class="redefinir">Redefinir Padrão</button> 
+  
+    <button type="button" id="saveColor">Salvar</button>
+  </div>
+  
+ </div>
+ 
+  <h1 style="font-size: 30px; color:white;"><center>Stands</center></h1>
+  <a href="homeBooks" th:href="@{/home}"style="font-size: 20px;">Inicio</a>
+  <a href="myBooks" style="font-size: 20px;">Minha Biblioteca</a>
+  <a href="#" style="font-size: 20px;">Doados</a>
+  <a href="#" style="font-size: 20px;">Trocados</a>
+  <a href="#" style="font-size: 20px;">Empréstimos</a>
+  <a href="editProfile" style="font-size: 20px;">Editar Perfil</a>
+  <a href="bookRegister"  style="font-size: 20px;">Gerenciador de Livros</a>
+  
+</div>
+</div>
+
+
+<div id="main">
+  <div id="BP" class="divbarradepesquisa">  
+  <span style='margin-top: -6px;' class="hamburguer" onclick="openNav()">&#9776;</span>
+  <img src="img/img_logo.png" style="vertical-align: middle;
+  width: 120px; margin-left: 62px;
+    margin-top: 9px;">
+
+   <!--barra de pesquisa-->
+  
+   <div class="search-container" style="margin-right: -400px">
+
+        <!--Botão que ativa o modal de Configurações de Design-->
+      <button id="myBtn"><i class="fa fa-cog"></i></button> 
+
+      <!--Botão que aciona o suporte-->
+       <div id="mySupport" class="supportnav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeSupp()">&times;</a>
+  <div style="margin-left: 20px;">
+        <iframe src="https://infinitus-book.tomticket.com/formulario?id=EP32224&account=2062336P12062019081256" class="formulario-suporte"></iframe>
+    </div>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openSupp()"><i class='fas fa-headset' style='font-size:25px; color:white'></i></span>
+
+ <!--Botão Sair-->
+<a id="buttonExit" th:href="@{/logout}" ><i class='fas fa-power-off' style='font-size:25px; color:white;'></i></a>
+
+  </div>
+
+
+	<!-- Larissa - Form que traz informações do perfil do usuário, utilizando Session -->
+	<form autocomplete="off" action="#" th:action="@{/editProfile}"
+		 th:object=${user} method="post" class="form-horizontal" role="form">
+		<div class="input-container">
+			<div id="colunaA">
+			<span style="font-size: 30px; color: #FFFFFFF;">Informações Pessoais</span>			
+			<div id="group-1">
+				<input class="input" type="text" th:value="${session.name}" name="name" id="name"
+					placeholder="Nome" required/> 
+				<input	class="input" type="text" th:value="${session.lastName}" 	th:name="lastName" th:id="lastName"
+					placeholder="Sobrenome" required/><br> 
+				<input class="input" type="text" th:value="${session.email}" th:name="email" th:id="email"  disabled /><br>
+				<input class="input" type="password" th:name="password" th:id="password" placeholder="Nova senha" /><br>
+				<input class="input" type="text" th:value="${session.cpf}" th:name="cpf" th:id="cpf" placeholder="CPF" maxlength=14 onkeypress="mascara(this, '###-###-###-##')"required/><br>			
+				</div>	
+				<button class="input" type="submit" id="buttonsave">Salvar</button>
+			</div>
+			<!--Parte dois do Formulario de Perfil-->
+			<div id="colunaB">
+			<span style="font-size: 30px; color: #FFFFFFF;">Informações Adicionais</span>			
+			<div id="group-2">			
+				<input class="input" type="text" th:value="${session.zipcode}" th:name="zipcode" th:id="zipcode"					
+					placeholder="CEP" onkeypress="mascara(this, '#####-###')"
+					maxlength="9" style="width: 28%" required /> 
+				<input class="input" type="text"
+					th:name="state" th:value="${session.state}" th:id="state" placeholder="Estado"
+					style="width: 21%; margin-left: 30px" required/> 
+				<input class="input" type="text" th:value="${session.city}" th:name="city" th:id="city" 
+					placeholder="Cidade" style="width: 30%; margin-left: 35px" required/><br> 
+				<input class="input" type="text" th:value="${session.neighborhood}" th:name="neighborhood" th:id="neighborhood" placeholder="Bairro" required/><br>				
+				<input class="input" type="text" th:value="${session.address}" th:name="address" th:id="address"
+					placeholder="Endereço" style="width: 58%; margin-left: 0px"  required/> 
+				<input class="input" type="text" th:value="${session.number}" th:name="number" th:id="number" placeholder="Número" style="width: 30%; margin-left: 31px;" required/><br>													
+				<input class="input" type="text" th:value="${session.complement}" th:name="complement" th:id="complement" placeholder="Complemento" /><br>				
+					<select  th:name="readlike" th:id="readlike" required>
+					<option th:each="r : ${session.readlike}" th:value="${session.readlike}" th:utext="${session.readlike}">Selecione seu genêro favorito</option>
+					<option value="">Selecione seu genêro favorito</option>
+					<option value="Poesia">Poesia</option>
+					<option value="Romance">Romance</option>
+					<option value="Crônica">Crônica</option>
+					<option value="Conto">Conto</option>
+					<option value="Autobiografia">Autobiografia</option>
+					<option value="Fantasia">Fantasia</option>
+					<option value="Horror">Horror</option>
+					<option value="Ficção Científica">Ficção Científica</option>
+					<option value="Suspense">Suspense</option>
+					<option value="Outros">Outros</option>
+				</select> 
+				</div>
+				<a th:href="@{/home}">
+				<input type="button" value="Voltar" id="buttoncancel"></a>
+			</div>
+		</div>
+	</form>
+	
+	<!-- Larissa - Código que faz a consulta de CEP para este completar campos na página -->
+		<script type="text/javascript" src="js/api-cep-widenet.js"></script>
+      <!--abaixo é o link p igar no javascripito-->
+         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+            <!--abaixo é o link  do slick do caroussel-->
+             <!--JS caroussel-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/js_background.js"></script>
+	    <script type="text/javascript" src="js/js_Menu.js"></script>
+        <script type="text/javascript" src="js/js_modal.js"></script>
+        <script type="text/javascript" src="js/js_Padrao.js"></script>
+        <script type="text/javascript" src="js/js_suporte.js"></script>
+        <script type="text/javascript" src="js/js_chat.js"></script>
+        <script type="text/javascript" src="js/js_Configuracao.js"></script>
+        <script type="text/javascript" src="js/api-cep-widenet.js"></script>
+        
+        
+</body>
+</html>

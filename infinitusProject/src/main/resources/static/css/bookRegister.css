@@ -1,0 +1,184 @@
+*{
+  font-family: 'Titillium Web', sans-serif;
+}
+@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Titillium Web', sans-serif;
+	background-size: cover;
+	overflow-x: hidden;
+	
+}
+
+.feedback-register{
+	font-size: 20px;
+    color: #fff;
+    margin-top: 16px;
+    text-align: center;
+    width: calc(100% - 320px);
+    position: absolute; 
+}
+
+
+#colunaA{
+	width: 37%;
+	margin-left:10%;
+	margin-top: 9px;
+}
+
+#grupo-1{
+	padding-left: 5%;
+	padding-right: 5%;	
+	padding-top: 5%;	
+	padding-bottom: 5%;			
+	border: 1px solid #ccc;	
+	border-radius: 4px;	
+	border-color: white;
+	margin-top: -3px;
+	
+}
+
+#colunaB{
+	width: 37%;
+	margin-left:9%;
+	border-color: white;
+	
+}
+
+#grupo-2{
+	padding-left: 5%;
+	padding-right: 5%;	
+	padding-top: 5%;	
+	padding-bottom: 5%;			
+	border: 1px solid #ccc;	
+	border-radius: 4px;	
+	border-color: white;
+	margin-top: 3px;
+	
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 35px;
+  color: #BA55D3;
+  font-size: 20px;
+}
+
+/*box do Cadastro de Livros - conteudo do form*/
+.form-box{
+	height: 450px;
+	box-sizing: border-box;
+	padding: 40px;
+	width: 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ac58aa), to(#7a61ab));
+    background: -moz-linear-gradient(top,#ac58aa , #7a61ab);
+    border-color: white; 
+}
+
+.textbox {
+	width: 100%;
+	overflow: hidden;
+	font-size: 15px;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 1px solid white;
+}
+
+.textbox i{
+	width: 26px;
+	float: left;
+	text-align: center;
+}
+
+.textbox input, .select{
+	border: none;
+	outline: none;
+	background: none;
+	color: white;
+	font-size: 15px;
+	width: 80%;
+	float: left;
+	margin: 0 10px;
+}
+
+.select {	
+	background-color: #7a61ab;	
+	font-size: 17px;	
+	width: 100%
+}
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+textarea{
+  font-family: 'Titillium Web', sans-serif;
+  background: none;
+  border: 2px solid #D42ABF;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-size: 15px;
+  width: 100%; 
+  color: white;
+  
+}
+
+
+/*Botão de  Cadastro do Livro */
+.btnCadastrar{
+	width: 40%;
+	background: none;
+	border: 2px solid #D42ABF;
+	color: white;
+	padding: 6px;
+	font-size: 15px;
+	cursor: pointer;
+	margin-top: 5%;
+  	margin-left: 35px;
+}
+
+.btnCadastrar:focus {
+  outline: none;
+}
+.btnCadastrar:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+.btnCadastrar:hover,
+.btnCadastrar:focus {
+  background-color:#D42ABF;
+  background-image: linear-gradient(#D42ABF, #D42ABF);
+}
+
+/*Botão Cancelar*/
+.btnCancelar{
+  width: 40%;
+  background: none;
+  border: 2px solid #D42ABF;
+  color: white;
+  padding: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 5%;
+  margin-left: 19px;
+}
+
+.btnCancelar:focus {
+  outline: none;
+}
+.btnCancelar:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+.btnCancelar:hover,
+.btnCancelar:focus {
+  background-color:#D42ABF;
+  background-image: linear-gradient(#D42ABF, #D42ABF);
+}
+
+.button{
+  margin-top: -30px;
+}
+/* Fim do Form */
